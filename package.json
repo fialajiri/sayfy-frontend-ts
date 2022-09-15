@@ -6,10 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "watch:sass": "node-sass src/sass/main.scss src/styles/globals.css -w",
     "lint": "next lint"
   },
   "dependencies": {
     "next": "12.3.0",
+    "node-sass": "^7.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

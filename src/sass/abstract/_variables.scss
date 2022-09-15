@@ -1,0 +1,43 @@
+// COLORS
+
+$color-background: #f1f1f1;
+$color-background2: #e7e1e1;
+
+$color-primary: #1b7a57;
+
+$color-primary-light1: #18c787;
+
+$color-secondary: #7a5b0f;
+
+$color-secondary-light1: #c79722;
+
+$color-tertiary: #69277a;
+
+$color-grey1: #868e96;
+$color-grey2: #6f6f6f;
+$color-grey3: #777;
+$color-grey4: #555;
+$color-grey5: #333;
+$color-grey6: #222;
+
+$color-line: #d1c7a3;
+
+$color-white: #fff;
+$color-black: #000;
+
+// LINES AND SHADOW
+
+$shadow-light: 0 2rem 6rem rgba(0, 0, 0, 0.03);
+$shadow-light-2: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+$shadow-dark: 0 2rem 6rem rgba($color-black, 0.2);
+$shadow-dark-2: 0 5rem 10rem rgba($color-black, 0.5);
+
+$border-radius: 2rem;
+$border-line: 2px solid $color-secondary-dark3;
+$border-line-dark: 2px solid $color-primary-dark2;
+$border-line_half: 0.5px solid $color-line;
+
+// FONT
+$font-sans: "Rubik", sans-serif;
+
+$default-line-height: 1.6;

@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1 rem = 9px
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; // 1 rem = 8px
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1 rem = 12px
+  }
+}
+
+body {
+  box-sizing: border-box;
+  background-color: $color-background;
+  height: 50rem;
+  font-family: 'Oswald', sans-serif;
+
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  // position: relative;
+  min-height: 100vh;
+
+}
+
+::selection {
+  background-color: $color-primary-light1;
+  color: $color-white;
+}
