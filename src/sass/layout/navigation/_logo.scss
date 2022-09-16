@@ -1,0 +1,9 @@
+.logo-image {
+  height: 12rem;
+  cursor: pointer;
+  animation: rotate 4s linear infinite;  
+
+  &:hover{
+    animation: rotate 2s linear infinite
+  }
+}

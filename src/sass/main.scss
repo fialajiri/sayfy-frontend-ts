@@ -6,3 +6,12 @@
 @import "base/typography";
 @import "base/utilities";
 @import 'base/animation';
+
+@import "layout/header/header";
+@import "layout/navigation/logo";
+@import "layout/navigation/main-navigation";
+@import "layout/navigation/nav-links";
+@import "layout/navigation/side-drawer";
+@import "layout/footer/footer";
+
+@import "components/homepage/sayfy-hero";

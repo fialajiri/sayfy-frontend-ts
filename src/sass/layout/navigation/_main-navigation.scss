@@ -1,0 +1,111 @@
+.navigation {
+  height: 13rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  opacity: 0.95;
+  z-index: 10;
+
+  &__drawer {
+    & ul {
+      margin-top: 15rem;
+      margin-left: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .main__navigation {
+    position: fixed;
+    align-self: center;
+    justify-self: center;
+    max-width: 140rem;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 13rem;
+    background-color: $color-background;
+
+    &__button {
+      // display: none;
+
+      cursor: pointer;
+
+      &:hover .main__navigation__icon::before {
+        top: -1.5rem;
+      }
+
+      &:hover .main__navigation__icon::after {
+        top: 1.5rem;
+      }
+
+      @include respond(tab-port) {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &__checkbox {
+      display: none;
+    }
+
+    &__button {
+      display: none;
+      @include respond(tab-port) {
+        display: inline-block;
+      }
+    }
+
+    &__links {
+      @include respond(tab-port) {
+        display: none;
+      }
+    }
+
+    &__icon {
+      position: relative;
+
+      &,
+      &::after,
+      &::before {
+        display: inline-block;
+        height: 3px;
+        width: 4.5rem;
+        background-color: $color-secondary;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        transition: all 400ms;
+      }
+
+      &::before {
+        top: -1.2rem;
+      }
+
+      &::after {
+        top: 1.2rem;
+      }
+    }
+
+    &__checkbox:checked + .main__navigation__button .main__navigation__icon {
+      background-color: transparent;
+    }
+
+    &__checkbox:checked + .main__navigation__button .main__navigation__icon::before {
+      top: 0;
+      transform: rotate(135deg);
+    }
+
+    &__checkbox:checked + .main__navigation__button .main__navigation__icon::after {
+      top: 0;
+      transform: rotate(-135deg);
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.hero-section {
+  &__container {
+    margin-top: 5rem;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 55rem;
+  }
+
+  &__heading {
+    color: $color-sayfy-logo;
+    font-size: 4rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+  }
+
+  &__image-box {
+    &--sayfy {
+      position: relative;
+      display: flex;
+      width: 50rem;
+      height: 55rem;
+    }
+    &--bike {
+      position: relative;
+      display: flex;
+      width: 50rem;
+      height: 35rem;
+    //   transform: rotateX(360deg) rotateY(180deg);
+      animation: moveInLeft 1.5s ease-out;
+    }
+  }
+}

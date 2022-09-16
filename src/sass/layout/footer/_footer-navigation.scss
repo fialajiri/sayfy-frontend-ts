@@ -1,0 +1,20 @@
+.footer__nav__list {
+  list-style: none;
+  display: flex;
+  gap: 4rem;
+
+  font-size: 1.6rem;
+
+  &--item {
+    color: $color-primary-dark2;
+    & a {
+      text-decoration: none;
+      font-weight: 500;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+    &--active {
+      color: $color-secondary-dark3 !important;
+    }
+  }
+}
