@@ -1,6 +1,6 @@
 .hero-section {
   &__container {
-    margin-top: 5rem;
+    margin-top: 8rem;
     position: relative;
     width: 100%;
     display: flex;
@@ -17,11 +17,13 @@
   }
 
   &__heading {
-    color: $color-sayfy-logo;
-    font-size: 4rem;
-    font-weight: 400;
+    display: flex;
+    flex-wrap: wrap;
+    color: $color-tertiary;
+    font-size: 4.5rem;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: -1px;
+    
   }
 
   &__image-box {
