@@ -1,0 +1,42 @@
+[
+  {
+    "id": "id1",
+    "date": "2022-03-18T09:36:58.000Z",
+    "title": "Závod zná svého vítěze",
+    "perex": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit hendrerit ligula. Duis eu nunc sollicitudin, commodo lorem id, tristique arcu. Nulla bibendum molestie lacus, ut convallis augue commodo in.</p>",
+    "imageUrl": "/images/aktualita-image-1.jpg",
+    "message": ""
+  },
+  {
+    "id": "id2",
+    "date": "2022-03-18T09:11:57.000Z",
+    "title": "Termín závodu stanoven",
+    "perex": "<p>roin tempus ornare metus nec convallis. Maecenas faucibus rutrum lorem, a semper risus lobortis tristique.</p>",
+    "imageUrl": "/images/aktualita-image-2.jpg",
+    "message": ""
+  },
+  {
+    "id": "id3",
+    "date": "2022-02-25T09:58:00.000Z",
+    "title": "Oprava kol zdarma",
+    "perex": "<p>Duis sollicitudin libero metus, vel fringilla libero pretium eu. Proin ultricies vitae sapien mattis placerat. Ut vitae porta risus. Sed sit amet consequat nibh. Pellentesque a iaculis ligula.</p>",
+    "imageUrl": "/images/aktualita-image-3.jpg",
+    "message": ""
+  },
+  {
+    "id": "id4",
+    "date": "2021-10-12T12:10:38.000Z",
+    "title": "Letos budou ceny pro všechny",
+    "perex": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit hendrerit ligula. Duis eu nunc sollicitudin, commodo lorem id, tristique arcu. Nulla bibendum molestie lacus, ut convallis augue commodo in.</p>",
+    "imageUrl": "/images/aktualita-image-4.jpg",
+    "message": ""
+  },
+  {
+    "id": "id5",
+    "date": "2021-10-12T12:08:13.000Z",
+    "title": "Závodit může každý",
+    "perex": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit hendrerit ligula. Duis eu nunc sollicitudin, commodo lorem id, tristique arcu. Nulla bibendum molestie lacus, ut convallis augue commodo in.</p>",
+    "imageUrl": "/images/aktualita-image-5.jpg",
+    "message": ""
+  }
+]

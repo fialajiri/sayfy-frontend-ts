@@ -1,8 +1,14 @@
+import { AktualitaDoc } from "../../../interfaces/models";
 import Carousel from "../../carousel/carousel";
 
-const NewsSection: React.FC = () => {
+interface NewsSectionProps {
+    aktuality:AktualitaDoc[]
+}
+
+const NewsSection: React.FC<NewsSectionProps> = ({aktuality}) => {
     return <section className="news-section__container">
-        <Carousel />
+        <h2 className="heading-secondary news-section__heading">Aktuality</h2>
+        <Carousel aktuality={aktuality}/>
     </section>
 };
 

@@ -9,5 +9,5 @@ export interface AktualitaDoc {
   title: string;
   perex: string;
   message: string;
-  image: ImageObject;
+  imageUrl: string;
 }

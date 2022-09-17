@@ -37,9 +37,11 @@ body {
 }
 
 .page-container {
+  margin: auto;
+  max-width: 140rem;
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: relative;  
   min-height: 100vh;
   padding:  0 3rem;
 

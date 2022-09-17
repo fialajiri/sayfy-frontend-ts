@@ -1,0 +1,14 @@
+.news-section {
+  &__container {
+    position: relative;
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  &__heading {    
+    text-align: center;
+
+  }
+}

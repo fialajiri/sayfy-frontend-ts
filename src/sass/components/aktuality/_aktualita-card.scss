@@ -1,0 +1,40 @@
+.aktualita-card {
+  &__container {
+    position: relative;
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    margin: 0 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 36rem;
+    overflow: hidden;
+  }
+
+  &__text-container {    
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+    padding: 0 .5rem;
+  }
+
+  &__heading {
+    
+  }
+
+  &__datum {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $color-tertiary;
+  }
+
+  &__image {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 30rem;
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+}
