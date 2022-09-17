@@ -9,8 +9,10 @@ const InfoSection: React.FC = () => {
         </video>
       </div>
 
-      <div className="u-center-text">
-        <h2 className="heading-secondary">Město Hrob</h2>
+      <div className="u-center-text info-section__text" >
+        <h2 className="heading-primary">28. září</h2>
+        <h2 className="heading-tertiary">každý rok</h2>
+        <h2 className="heading-secondary">Královské Město Hrob</h2>
       </div>
     </section>
   );
