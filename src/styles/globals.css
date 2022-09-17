@@ -411,6 +411,86 @@ button {
       width: 100%;
       object-fit: cover; }
 
+.sayfy-intro {
+  margin-top: 8rem;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.2);
+  border-radius: 2rem; }
+  .sayfy-intro__image-box {
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 1s; }
+    .sayfy-intro__image-box:hover {
+      transform: scale(1.1); }
+  .sayfy-intro__heading {
+    color: #1b7a57;
+    letter-spacing: 1px; }
+    .sayfy-intro__heading-nick {
+      margin: 0 1rem;
+      text-transform: none; }
+  .sayfy-intro__text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; }
+  .sayfy-intro__born-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12rem; }
+  .sayfy-intro__born-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; }
+  .sayfy-intro__dead-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; }
+  .sayfy-intro__born-text {
+    font-size: 3rem;
+    color: #5f236e;
+    margin-bottom: 0.5rem; }
+
+.sayfy-main {
+  margin-top: 10rem;
+  margin-bottom: 15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10rem; }
+  .sayfy-main__blok-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.2);
+    border-radius: 2rem;
+    overflow: hidden; }
+    .sayfy-main__blok-container-odd {
+      flex-direction: row-reverse; }
+  .sayfy-main-text {
+    max-width: 60%;
+    font-size: 2.4rem;
+    color: #0e3d2c;
+    padding: 0 2rem; }
+  .sayfy-main__carusel-image {
+    display: flex;
+    position: relative;
+    width: 95%;
+    height: 50rem;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 2rem; }
+  .sayfy-main__image-box {
+    position: relative;
+    display: flex;
+    width: 40%;
+    height: 35rem; }
+  .sayfy-main__image {
+    transform: scale(1.2); }
+
 .aktualita-card__container {
   position: relative;
   perspective: 150rem;

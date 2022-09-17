@@ -15,6 +15,9 @@ const NavigationLinks: React.FC = () => {
       <li className={getClass("/")}>
         <Link href="/">Domů</Link>
       </li>
+      <li className={getClass("/sayfy")}>
+        <Link href="/sayfy">Sayfy</Link>
+      </li>
       <li className={getClass("/aktuality")}>
         <Link href="/aktuality">Aktuality</Link>
       </li>

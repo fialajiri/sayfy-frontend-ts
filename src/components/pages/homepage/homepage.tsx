@@ -2,6 +2,7 @@ import SayfyHero from "./sayfy-hero";
 import NewsSection from "./news-section";
 import InfoSection from "./info-section";
 import { AktualitaDoc } from "../../../interfaces/models";
+import { Fragment } from "react";
 
 interface HomePageProps {
   aktuality: AktualitaDoc[]
@@ -9,11 +10,11 @@ interface HomePageProps {
 
 const HomePage: React.FC<HomePageProps> = ({aktuality}) => {
   return (
-    <div >
+    <Fragment >
       <SayfyHero />
       <InfoSection />
       <NewsSection aktuality={aktuality} />
-    </div>
+    </Fragment>
   );
 };
 
