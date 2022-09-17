@@ -19,13 +19,13 @@ const SayfyPage: React.FC = () => {
         </div>
         <div className="sayfy-intro__text-container">
           <h1 className="heading-primary sayfy-intro__heading">
-            David <span className="sayfy-intro__heading-nick">"Sayfy"</span>{" "}
+            David <span className="sayfy-intro__heading-nick">„Sayfy“</span>{" "}
             Seifrt
           </h1>
           <div className="sayfy-intro__born-text-container">
             <div className="sayfy-intro__born-container">
               <div className="sayfy-intro__asterisk-icon">
-                <Image src={asterisk} width={25} height={25} />
+                <Image src={asterisk} width={25} height={25} alt="icon asterisk"/>
               </div>
 
               <h3 className="sayfy-intro__born-text">8.2.1991</h3>
@@ -33,7 +33,7 @@ const SayfyPage: React.FC = () => {
 
             <div className="sayfy-intro__dead-container">
               <div className="sayfy-intro__cross-icon">
-                <Image src={cross} width={25} height={25} />
+                <Image src={cross} width={25} height={25} alt="icon cross" />
               </div>
               <h3 className="sayfy-intro__born-text">28.9.2008</h3>
             </div>
@@ -71,7 +71,7 @@ const SayfyPage: React.FC = () => {
             <Image
               className="sayfy-main__image"
               src="/images/sayfy/sayfy-9.jpg"
-              alt="David Seifrt fotka 1 "
+              alt="David Seifrt fotka 2 "
               layout="fill"
               objectFit="contain"
             />
@@ -89,7 +89,7 @@ const SayfyPage: React.FC = () => {
             <Image
               className="sayfy-main__image"
               src="/images/sayfy/sayfy-5.jpg"
-              alt="David Seifrt fotka 1 "
+              alt="David Seifrt fotka 3 "
               layout="fill"
               objectFit="contain"
             />
@@ -107,7 +107,7 @@ const SayfyPage: React.FC = () => {
             <Image
               className="sayfy-main__image"
               src="/images/sayfy/sayfy-7.jpg"
-              alt="David Seifrt fotka 1 "
+              alt="David Seifrt fotka 4 "
               layout="fill"
               objectFit="contain"
             />

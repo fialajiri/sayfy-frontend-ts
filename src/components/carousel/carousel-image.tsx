@@ -20,10 +20,9 @@ const responsive = {
 
 const CarouselImage: React.FC<ImageCarouselProps> = (props) => {
   const Images = props.images.map((image) => (
-    <div className={props.class}>
+    <div className={props.class} key={image.imageId}>
       <Image
-        src={image.imageUrl}
-        key={image.imageId}
+        src={image.imageUrl}        
         alt={image.imageName}
         objectFit="cover"
         layout="fill"
