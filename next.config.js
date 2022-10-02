@@ -1,7 +1,42 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
+const { PHASE_PRODUCTION_SERVER, PHASE_DEVELOPMENT_SERVER, PHASE_TEST } = require("next/constants");
 
-module.exports = nextConfig
+
+module.exports = (phase) => {
+  if (phase === PHASE_DEVELOPMENT_SERVER) {
+    return {
+      images: {
+        domains: ["https://sayfyho-memorial.s3.eu-central-1.amazonaws.com"],
+      },
+      env: {
+        BACKEND_URL: "http://localhost:5000",
+        IMAGE_DOMAIN: "https://sayfyho-memorial.s3.eu-central-1.amazonaws.com",
+      },
+    };
+  }
+
+  if (phase === PHASE_TEST) {
+    return {
+      images: {
+        domains: ["https://sayfyho-memorial.s3.eu-central-1.amazonaws.com"],
+      },
+      env: {
+        BACKEND_URL: "http://localhost:5000",
+        IMAGE_DOMAIN: "https://sayfyho-memorial.s3.eu-central-1.amazonaws.com",
+      },
+    };
+  }
+
+  return {
+    images: {
+      domains: ["https://sayfyho-memorial.s3.eu-central-1.amazonaws.com"],
+    },
+
+    env: {
+      BACKEND_URL: "https://ecommerce-project-ts.herokuapp.com",
+      IMAGE_DOMAIN: "https://sayfyho-memorial.s3.eu-central-1.amazonaws.com",
+    },
+  };
+};
+
+

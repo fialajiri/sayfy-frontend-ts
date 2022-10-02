@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FacebookLogo } from "phosphor-react";
+import { FacebookLogo, User } from "phosphor-react";
 
 const NavigationLinks: React.FC = () => {
   const router = useRouter();
@@ -34,6 +34,13 @@ const NavigationLinks: React.FC = () => {
         <a href="#" target="_blank" aria-label="Facebook">
           <FacebookLogo className="nav__list__icon" weight="bold" />
         </a>
+      </li>
+      <li className="nav__list__item">
+        <Link href="/login">
+          <a aria-label="Login">
+            <User className="nav__list__icon" weight="bold" />
+          </a>
+        </Link>
       </li>
     </ul>
   );

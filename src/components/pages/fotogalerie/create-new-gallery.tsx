@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import FloatingLabelInput from "../../form-elements/floating-label-input";
 import MultipleImageUpload from "../../form-elements/multiple-image-upload";
 import Button from "../../ui-elements/button";
-import axios from "axios";
+import createNewGallery from "../../../utils/gallery-utils/create-new-gallery";
+import { GalleryDoc } from "../../../interfaces/models";
 
 const CreateNewGallery: React.FC = () => {
   const [galleryName, setGalleryName] = useState<string>("");
@@ -11,29 +12,15 @@ const CreateNewGallery: React.FC = () => {
 
   const submitFormHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    selectedImages.forEach(async (image) => {
-      const imageName = image.name;
-      const imageType = image.type;
-      console.log(imageType);
-
-      const { data } = await axios.post("http://localhost:5000/api/upload", {
-        fileName: imageName,
-        fileType: imageType,
-      });
-
-      console.log(data);
-
-      try {
-        await axios.put(data.signedUrl, image, {
-          headers: {
-            "Content-Type": imageType,
-          },
-        });
-      } catch (err) {
-        console.log(err);
-      }
-    });
+    let newGallery: GalleryDoc | null;
+    let key;
+    console.log(key);
+    try {
+      newGallery = await createNewGallery(galleryName, selectedImages);
+      console.log(newGallery);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (

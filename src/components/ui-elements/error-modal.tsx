@@ -1,9 +1,10 @@
 import React from "react";
+import { ErrorDoc } from "../../interfaces/models";
 import Modal from "./modal";
 
 export interface IErrorModalProps {
   onClear: () => void;
-  errors: string[];
+  errors: ErrorDoc[];
 }
 
 const ErrorModal: React.FC<IErrorModalProps> = ({ onClear, errors }) => {
@@ -11,8 +12,8 @@ const ErrorModal: React.FC<IErrorModalProps> = ({ onClear, errors }) => {
 
   const modalContent = (
     <div>
-      {errors.map((error) => (
-        <p>{error}</p>
+      {errors.map((error, index) => (
+        <p key={index}>{error.message}</p>
       ))}
     </div>
   );

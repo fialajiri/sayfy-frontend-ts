@@ -13,7 +13,7 @@ export interface IModalProps {
 }
 
 const Modal: React.FC<IModalProps> = ({ isShow, header, hide, modalContent }) => {
-  return (
+  return ReactDOM.createPortal(
     <React.Fragment>
       {isShow && <Backdrop onClick={hide} />}
       <CSSTransition in={isShow} mountOnEnter unmountOnExit timeout={200} classNames="modal">
@@ -25,7 +25,8 @@ const Modal: React.FC<IModalProps> = ({ isShow, header, hide, modalContent }) =>
           <Button onClick={hide}>Ok</Button>
         </div>
       </CSSTransition>
-    </React.Fragment>
+    </React.Fragment>,
+    document.getElementById("modal-hook")!
   );
 };
 

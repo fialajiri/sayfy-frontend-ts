@@ -1,0 +1,68 @@
+.button {
+  line-height: 1.2 !important;
+  text-decoration: 0;
+  font-family: $font-sans;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;  
+  background-color: $color-primary;
+  color: $color-background;
+  padding: 1.6rem 3rem;
+  border: 2px solid transparent;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: all 200ms;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+  &:hover{
+      background-color: $color-sayfy-logo;
+  }
+
+  &--inverse {
+    background: transparent;    
+    border: $border-line;
+    color: $color-primary-dark2;
+    
+
+    &:hover{
+        background-color: transparent;
+
+        border: 1px solid $color-primary-dark2;
+    }
+
+  }
+
+  
+
+//   &--danger {
+//     background: $color-red;
+//     border-color: $color-red;
+//     color: $color-grey-dark-2;
+//   }
+
+  &:disabled,
+  &:hover:disabled,
+  &:active:disabled {
+    background: $color-background;
+    color: $color-primary-light2;
+    border-color: $color-primary-light2;
+    cursor: not-allowed;
+  }
+
+  &--small {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  &--big {
+    padding: 1.5rem 4rem;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+}
