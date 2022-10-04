@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const login = useCallback(async (email: string, password: string) => {
     try {
       const { data: user }: { data: UserDoc } = await axios.post(
-        `${process.env.BACKEND_URL}/api/users/signi`,
+        `${process.env.BACKEND_URL}/api/users/signin`,
         { email, password },
         AXIOS_CONFIG
       );

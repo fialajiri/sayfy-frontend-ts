@@ -1,6 +1,6 @@
 import React from "react";
-import { ErrorDoc } from "../../interfaces/models";
 import Modal from "./modal";
+import { ErrorDoc } from "../../interfaces/models";
 
 export interface IErrorModalProps {
   onClear: () => void;
@@ -29,3 +29,5 @@ const ErrorModal: React.FC<IErrorModalProps> = ({ onClear, errors }) => {
 };
 
 export default ErrorModal;
+
+

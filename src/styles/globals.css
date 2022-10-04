@@ -41,6 +41,20 @@ body {
   background-color: #499579;
   color: #fff; }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 2px solid #1b7a57;
+  -webkit-text-fill-color: #1b7a57;
+  -webkit-box-shadow: 0 0 0 1000px #e8f2ee inset;
+  transition: background-color #e8f2ee !important; }
+
 .heading-primary {
   color: #5f236e;
   font-size: 6rem;
@@ -313,7 +327,7 @@ button {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
-  color: #5f236e; }
+  color: #1b7a57; }
   .footer__created-by__text {
     font-size: 1rem;
     text-transform: uppercase;
@@ -357,20 +371,20 @@ button {
     transform: translate(0, 0rem) scale(0.85); }
   .floating-label-input__input {
     width: 100%;
-    height: 5rem;
+    height: 5.8rem;
     outline: 0;
     border: 2px solid #1b7a57;
     font-family: "Oswald", sans-serif;
-    color: #0e3d2c;
+    color: #1b7a57;
     background-color: #e8f2ee;
     border-radius: 2rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 500;
     padding: 2.2rem 0 0 2rem; }
     .floating-label-input__input:focus {
       border: 2px solid #5f236e; }
   .floating-label-input__label {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 500;
     font-family: "Oswald", sans-serif;
     padding: 0 1.2rem 1rem 2rem;
@@ -425,7 +439,7 @@ button {
     font-weight: 500; }
 
 .backdrop {
-  position: fixed;
+  position: absolute;
   top: 0rem;
   left: 0;
   width: 100%;
@@ -434,9 +448,9 @@ button {
   z-index: 10; }
 
 .loading-spinner__as-overlay {
+  z-index: 100;
   height: 100%;
   width: 100%;
-  margin: 0 auto;
   position: absolute;
   top: 0;
   left: 0;
@@ -447,7 +461,7 @@ button {
 
 .loading-spinner__logo {
   border-radius: 50%;
-  animation: lds-dual-ring 2s linear infinite; }
+  animation: lds-dual-ring 3s linear infinite; }
 
 @keyframes lds-dual-ring {
   0% {
@@ -467,30 +481,31 @@ button {
   z-index: 100;
   position: fixed;
   top: 22vh;
-  left: 10%;
-  width: 80%;
+  left: 20%;
+  width: 60%;
   background: #e8f2ee;
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.2);
   border-radius: 2rem; }
   .modal__header {
     width: 100%;
     padding: 1rem;
-    background-color: #e8f2ee;
-    color: #186e4e;
+    color: #1b7a57;
     border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem; }
+    border-top-right-radius: 2rem;
+    border-bottom: #000; }
     .modal__header h2 {
       text-transform: uppercase;
       text-align: center;
-      margin: 0.5rem;
-      color: #222; }
+      margin: 0.5rem; }
   .modal__content {
-    padding: 1rem 0.5rem; }
-  .modal__footer {
-    padding: 1rem 0.5rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around; }
+    gap: 2rem;
+    padding: 1rem 0.5rem;
+    font-size: 2.4rem;
+    color: #5f236e;
+    font-weight: 500; }
   .modal-enter {
     transform: translateY(-10rem);
     opacity: 0; }
