@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import HomePage from "../components/pages/homepage/homepage";
-import { AktualitaDoc } from "../interfaces/models";
+import { AktualitaDoc } from "../models/models";
 import aktualityData from "../../public/data/aktuality.json";
 
 interface HomeProps {

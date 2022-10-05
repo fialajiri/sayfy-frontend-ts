@@ -1,33 +1,30 @@
 import React from "react";
+import { ErrorDoc } from "../../models/models";
 import Modal from "./modal";
-import { ErrorDoc } from "../../interfaces/models";
 
 export interface IErrorModalProps {
   onClear: () => void;
-  errors: ErrorDoc[];
+  error: ErrorDoc | null;
 }
 
-const ErrorModal: React.FC<IErrorModalProps> = ({ onClear, errors }) => {
+const ErrorModal: React.FC<IErrorModalProps> = ({ onClear, error }) => {
   const header = "Něco se pokazilo";
 
-  const modalContent = (
-    <div>
-      {errors.map((error, index) => (
-        <p key={index}>{error.message}</p>
-      ))}
-    </div>
-  );
+  let modalContent: JSX.Element = <></>;
+
+  if (error) {
+    modalContent = (
+      <div>
+        {error.messages.map((message, index) => (
+          <p key={index}>{message}</p>
+        ))}
+      </div>
+    );
+  }
 
   return (
-    <Modal
-      hide={onClear}
-      header={header}
-      modalContent={modalContent}
-      isShow={errors.length > 0}
-    ></Modal>
+    <Modal hide={onClear} header={header} modalContent={modalContent} isShow={!!error}></Modal>
   );
 };
 
 export default ErrorModal;
-
-

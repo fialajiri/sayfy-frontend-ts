@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { AktualitaDoc } from "../../interfaces/models";
+import { AktualitaDoc } from "../../models/models";
 
 interface AktualitaCardProps {
   aktualita: AktualitaDoc;

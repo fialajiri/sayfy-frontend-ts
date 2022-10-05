@@ -1,4 +1,4 @@
-import { AktualitaDoc } from "../../../interfaces/models";
+import { AktualitaDoc } from "../../../models/models";
 import Carousel from "../../carousel/carousel";
 
 interface NewsSectionProps {

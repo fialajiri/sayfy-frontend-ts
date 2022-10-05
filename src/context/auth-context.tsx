@@ -1,7 +1,8 @@
 import axios, { AxiosError } from "axios";
 import React, { useCallback, useState, Fragment, useContext } from "react";
-import { AXIOS_CONFIG } from "../interfaces/axios-config";
-import { UserDoc } from "../interfaces/models";
+import { AXIOS_CONFIG } from "../models/axios-config";
+import { UserDoc } from "../models/models";
+import { transformAxiosError } from "../utils/error/error";
 
 export interface AuthContextInterface {
   id: string | null;
@@ -47,8 +48,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         setIsAdmin(user.isAdmin);
       }
     } catch (err: any) {
-      console.log(err);
-      throw err.response.data.errors;
+      throw err;
     }
   }, []);
 

@@ -1,28 +1,29 @@
 import { Fragment, useState } from "react";
 import FloatingLabelInput from "../../form-elements/floating-label-input";
 import Button from "../../ui-elements/button";
-import { ErrorDoc } from "../../../interfaces/models";
+import { ErrorDoc } from "../../../models/models";
 import { useAuth } from "../../../context/auth-context";
 import LoadingSpinner from "../../ui-elements/loading-spinner";
 import ErrorModal from "../../ui-elements/error-modal";
+import { transformAxiosError } from "../../../utils/error/error";
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [errors, setErrors] = useState<ErrorDoc[]>([]);
+  const [error, setError] = useState<ErrorDoc | null>(null);
   const { login, logout, isAuthenticated } = useAuth();
 
   const loginHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
       await login(email, password);
-    } catch (err) {
-      setErrors(err as ErrorDoc[]);
+    } catch (err: any) {
+      setError(transformAxiosError(err));
     }
   };
 
   const clearError = () => {
-    setErrors([]);
+    setError(null);
   };
 
   if (isAuthenticated === undefined) {
@@ -36,9 +37,9 @@ const LoginPage: React.FC = () => {
   } else {
     return (
       <Fragment>
-        <ErrorModal errors={errors} onClear={clearError} />
+        <ErrorModal error={error} onClear={clearError} />
         <div className="login__container">
-          <h2 className="heading-tertiary">Přihlašte se</h2>
+          <h3 className="heading-tertiary">Přihlašte se</h3>
 
           <form className="login__form" onSubmit={loginHandler}>
             <FloatingLabelInput

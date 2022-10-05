@@ -1,7 +1,7 @@
 import SayfyHero from "./sayfy-hero";
 import NewsSection from "./news-section";
 import InfoSection from "./info-section";
-import { AktualitaDoc } from "../../../interfaces/models";
+import { AktualitaDoc } from "../../../models/models";
 import { Fragment } from "react";
 
 interface HomePageProps {

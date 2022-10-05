@@ -20,5 +20,6 @@ export interface GalleryDoc {
 }
 
 export interface ErrorDoc {
-  message: string;
+  messages: string[];
+  status:number
 }

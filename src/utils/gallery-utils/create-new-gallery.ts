@@ -1,11 +1,7 @@
 import axios from "axios";
-import { AXIOS_CONFIG } from "../../interfaces/axios-config";
-import { GalleryDoc } from "../../interfaces/models";
-
-interface iData {
-  key: string;
-  signedUrl: string;
-}
+import { AXIOS_CONFIG } from "../../models/axios-config";
+import { GalleryDoc } from "../../models/models";
+import uploadFileToS3 from "../upload-to-s3";
 
 const createNewGallery = async (galleryName: string, images: File[]): Promise<GalleryDoc> => {
   const imagesKey: string[] = [];
@@ -17,25 +13,9 @@ const createNewGallery = async (galleryName: string, images: File[]): Promise<Ga
   );
 
   for (const image of images) {
-    const filePath = `${galleryName}/${image.name}`;
-    const fileType = image.type;
-
-    const {
-      data: { key, signedUrl },
-    }: { data: iData } = await axios.post(
-      `${process.env.BACKEND_URL}/api/upload`,
-      {
-        filePath,
-        fileType,
-      },
-      AXIOS_CONFIG
-    );
-
-    await axios.put(signedUrl, image, { headers: { "Content-Type": fileType } });
-
-    imagesKey.push(key);
+    imagesKey.push(await uploadFileToS3(image, galleryName));
   }
-  
+
   await axios.put(
     `${process.env.BACKEND_URL}/api/gallery/${gallery.id}`,
     { title: galleryName, images: imagesKey },
