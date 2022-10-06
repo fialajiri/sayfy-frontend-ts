@@ -3,7 +3,7 @@ import Image from "next/image";
 import Button from "../ui-elements/button";
 
 export interface MultipleImageUploadProps {
-  isValid: boolean; 
+  isValid: boolean;
   maxFiles: number;
   errorText: string;
   className?: string;
@@ -18,7 +18,7 @@ const MultipleImageUpload: React.FC<MultipleImageUploadProps> = (props) => {
 
   const clearImageSelection = () => {
     props.setImages([]);
-    setSelectedImages([])
+    setSelectedImages([]);
   };
 
   const pickImageHandler = () => {
@@ -32,11 +32,9 @@ const MultipleImageUpload: React.FC<MultipleImageUploadProps> = (props) => {
       clearImageSelection();
     } else if (event.target.files && event.target.files.length <= props.maxFiles) {
       const arrayToUpload = Array.from(event.target.files);
-      const fileArray = Array.from(event.target.files).map((file) =>
-        URL.createObjectURL(file)
-      );
-      
-      setSelectedImages(fileArray)
+      const fileArray = Array.from(event.target.files).map((file) => URL.createObjectURL(file));
+
+      setSelectedImages(fileArray);
       props.setImages(arrayToUpload);
       props.setIsValid(true);
     } else {
@@ -47,7 +45,9 @@ const MultipleImageUpload: React.FC<MultipleImageUploadProps> = (props) => {
   const renderPhotos = (source: string[]) => {
     return source.map((photo) => {
       return (
-        <Image src={photo} key={photo} height={150} width={225} alt="Obrázek v galerii" />
+        <div className="multiple-image-upload__image-container">
+          <Image src={photo} key={photo} layout="fill" objectFit="contain"  alt="Obrázek v galerii" />
+        </div>
       );
     });
   };
@@ -72,15 +72,13 @@ const MultipleImageUpload: React.FC<MultipleImageUploadProps> = (props) => {
           </div>
           <Button
             className="multiple-image-upload__form__button"
-            type="button"
-            size="small"
-            inverse
+            type="button"            
             onClick={pickImageHandler}
           >
             Vyberte obrázky
           </Button>
+        {!props.isValid && <p className="multiple-image-upload__error-text">{props.errorText}</p>}
         </div>
-        {!props.isValid && <p>{props.errorText}</p>}
       </div>
     </Fragment>
   );

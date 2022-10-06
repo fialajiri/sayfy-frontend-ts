@@ -10,6 +10,7 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
+
   
       &__preview {
         display: flex;
@@ -21,6 +22,24 @@
   
       &__button {
         align-self: center;
+
+        background-color: $color-tertiary !important;
+
       }
+
+      
+    }
+
+    &__image-container {
+      position: relative;
+      width: 30rem;
+      height: 20rem;
+    }
+
+    &__error-text{
+      font-size: 1.6rem;
+      font-weight: 500;
+      color:rgb(242, 52, 52);
+      align-self: center;
     }
   }

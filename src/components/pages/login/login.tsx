@@ -1,16 +1,15 @@
 import { Fragment, useState } from "react";
 import FloatingLabelInput from "../../form-elements/floating-label-input";
 import Button from "../../ui-elements/button";
-import { ErrorDoc } from "../../../models/models";
 import { useAuth } from "../../../context/auth-context";
 import LoadingSpinner from "../../ui-elements/loading-spinner";
 import ErrorModal from "../../ui-elements/error-modal";
-import { transformAxiosError } from "../../../utils/error/error";
+import { HttpError } from "../../../models/error-model";
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [error, setError] = useState<ErrorDoc | null>(null);
+  const [error, setError] = useState<HttpError | null>(null);
   const { login, logout, isAuthenticated } = useAuth();
 
   const loginHandler = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -18,7 +17,7 @@ const LoginPage: React.FC = () => {
     try {
       await login(email, password);
     } catch (err: any) {
-      setError(transformAxiosError(err));
+      setError(err);
     }
   };
 

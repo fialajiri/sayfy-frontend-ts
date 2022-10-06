@@ -1,8 +1,8 @@
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import React, { useCallback, useState, Fragment, useContext } from "react";
 import { AXIOS_CONFIG } from "../models/axios-config";
+import { ErrorData, HttpError } from "../models/error-model";
 import { UserDoc } from "../models/models";
-import { transformAxiosError } from "../utils/error/error";
 
 export interface AuthContextInterface {
   id: string | null;
@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         setIsAdmin(user.isAdmin);
       }
     } catch (err: any) {
-      throw err;
+      throw new HttpError(err.response?.data as ErrorData, err.response?.status);
     }
   }, []);
 

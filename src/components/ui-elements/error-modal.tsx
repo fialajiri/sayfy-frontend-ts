@@ -1,10 +1,10 @@
 import React from "react";
-import { ErrorDoc } from "../../models/models";
+import { HttpError } from "../../models/error-model";
 import Modal from "./modal";
 
 export interface IErrorModalProps {
   onClear: () => void;
-  error: ErrorDoc | null;
+  error: HttpError | null;
 }
 
 const ErrorModal: React.FC<IErrorModalProps> = ({ onClear, error }) => {
@@ -12,7 +12,7 @@ const ErrorModal: React.FC<IErrorModalProps> = ({ onClear, error }) => {
 
   let modalContent: JSX.Element = <></>;
 
-  if (error) {
+  if (error?.messages) {
     modalContent = (
       <div>
         {error.messages.map((message, index) => (

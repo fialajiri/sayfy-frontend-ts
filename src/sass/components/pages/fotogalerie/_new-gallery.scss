@@ -1,0 +1,18 @@
+.new-gallery {
+  &__container {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    &--button-container {
+      align-self: center;
+    }
+  }
+}

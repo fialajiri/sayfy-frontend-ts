@@ -396,6 +396,37 @@ button {
     .floating-label-input__label--active {
       transform: translate(0, 0rem) scale(0.85); }
 
+.multiple-image-upload__container {
+  padding: 2rem 0;
+  border: 2px solid #1b7a57;
+  border-radius: 2rem;
+  margin-bottom: 2rem; }
+
+.multiple-image-upload__form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; }
+  .multiple-image-upload__form__preview {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center; }
+  .multiple-image-upload__form__button {
+    align-self: center;
+    background-color: #5f236e !important; }
+
+.multiple-image-upload__image-container {
+  position: relative;
+  width: 30rem;
+  height: 20rem; }
+
+.multiple-image-upload__error-text {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #f23434;
+  align-self: center; }
+
 .button {
   line-height: 1.2 !important;
   text-decoration: 0;
@@ -682,6 +713,19 @@ button {
   min-width: 30%;
   gap: 2rem; }
   .login__form--button-container {
+    align-self: center; }
+
+.new-gallery__container {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; }
+
+.new-gallery__form {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; }
+  .new-gallery__form--button-container {
     align-self: center; }
 
 .aktualita-card__container {
