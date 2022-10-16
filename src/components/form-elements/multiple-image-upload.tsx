@@ -45,7 +45,7 @@ const MultipleImageUpload: React.FC<MultipleImageUploadProps> = (props) => {
   const renderPhotos = (source: string[]) => {
     return source.map((photo) => {
       return (
-        <div className="multiple-image-upload__image-container">
+        <div className="multiple-image-upload__image-container" key={photo}>
           <Image src={photo} key={photo} layout="fill" objectFit="contain"  alt="Obrázek v galerii" />
         </div>
       );

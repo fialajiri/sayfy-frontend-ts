@@ -7,9 +7,31 @@
     "build": "next build",
     "start": "next start",
     "watch:sass": "node-sass src/sass/main.scss src/styles/globals.css -w",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --no-cache",
+    "test:ci": "jest"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testTimeout": 20000,
+    "setupFilesAfterEnv": [
+      "./src/test/setup.ts"
+    ]
   },
   "dependencies": {
+    "@tiptap/extension-image": "^2.0.0-beta.199",
+    "@tiptap/extension-link": "^2.0.0-beta.199",
+    "@tiptap/extension-subscript": "^2.0.0-beta.199",
+    "@tiptap/extension-superscript": "^2.0.0-beta.199",
+    "@tiptap/extension-table": "^2.0.0-beta.199",
+    "@tiptap/extension-table-cell": "^2.0.0-beta.199",
+    "@tiptap/extension-table-header": "^2.0.0-beta.199",
+    "@tiptap/extension-table-row": "^2.0.0-beta.199",
+    "@tiptap/extension-text-align": "^2.0.0-beta.199",
+    "@tiptap/extension-youtube": "^2.0.0-beta.199",
+    "@tiptap/react": "^2.0.0-beta.199",
+    "@tiptap/starter-kit": "^2.0.0-beta.199",
     "axios": "^0.27.2",
     "next": "12.3.0",
     "node-sass": "^7.0.3",
@@ -20,12 +42,16 @@
     "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
+    "@types/jest": "^29.1.2",
     "@types/node": "18.7.16",
     "@types/react": "18.0.19",
     "@types/react-dom": "18.0.6",
     "@types/react-transition-group": "^4.4.5",
     "eslint": "8.23.0",
     "eslint-config-next": "12.3.0",
+    "jest": "^29.1.2",
+    "msw": "^0.47.4",
+    "ts-jest": "^29.0.3",
     "typescript": "4.8.3"
   }
 }

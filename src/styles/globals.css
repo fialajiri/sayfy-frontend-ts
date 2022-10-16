@@ -55,21 +55,21 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 1000px #e8f2ee inset;
   transition: background-color #e8f2ee !important; }
 
-.heading-primary {
+h1, .heading-primary {
   color: #5f236e;
   font-size: 6rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: -1px; }
 
-.heading-secondary {
+h2, .heading-secondary {
   font-size: 4.5rem;
   color: #1b7a57;
   font-weight: 600;
   line-height: 1.5;
   text-transform: uppercase; }
 
-.heading-tertiary {
+h3, .heading-tertiary {
   font-size: 3rem;
   color: #1b7a57;
   font-weight: 500;
@@ -556,6 +556,26 @@ button {
   font-size: 1.6rem;
   text-align: center; }
 
+.image-card__container {
+  position: relative;
+  width: 40rem;
+  height: 26rem;
+  border-radius: 2rem;
+  overflow: hidden; }
+
+.image-card__image-title {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 20;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #5f236e;
+  padding: 0.5rem 2rem;
+  background-color: rgba(232, 242, 238, 0.5);
+  border-radius: 2rem; }
+
 .hero-section__container {
   margin-top: 8rem;
   position: relative;
@@ -727,6 +747,79 @@ button {
   gap: 4rem; }
   .new-gallery__form--button-container {
     align-self: center; }
+
+.fotogalerie-page__container {
+  margin: 6rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  align-items: center; }
+
+.fotogalerie-page__image-item {
+  list-style: none;
+  cursor: pointer; }
+
+.fotogalerie-page__galleries-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem; }
+
+.gallery-detail__container {
+  margin: 6rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  align-items: center; }
+
+.gallery-detail__image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem; }
+
+/* Basic editor styles */
+.ProseMirror > * + * {
+  margin-top: 0.75em; }
+
+.ProseMirror ul,
+.ProseMirror ol {
+  padding: 0 1rem; }
+
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3,
+.ProseMirror h4,
+.ProseMirror h5,
+.ProseMirror h6 {
+  line-height: 1.1; }
+
+.ProseMirror code {
+  background-color: rgba(97, 97, 97, 0.1);
+  color: #616161; }
+
+.ProseMirror pre {
+  background: #0D0D0D;
+  color: #FFF;
+  font-family: 'JetBrainsMono', monospace;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem; }
+  .ProseMirror pre code {
+    color: inherit;
+    padding: 0;
+    background: none;
+    font-size: 0.8rem; }
+
+.ProseMirror img {
+  max-width: 100%;
+  height: auto; }
+
+.ProseMirror blockquote {
+  padding-left: 1rem;
+  border-left: 2px solid rgba(13, 13, 13, 0.1); }
+
+.ProseMirror hr {
+  border: none;
+  border-top: 2px solid rgba(13, 13, 13, 0.1);
+  margin: 2rem 0; }
 
 .aktualita-card__container {
   position: relative;

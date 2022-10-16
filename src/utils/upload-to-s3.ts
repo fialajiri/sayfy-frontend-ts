@@ -6,6 +6,17 @@ interface iData {
   signedUrl: string;
 }
 
+export const processFiles = async (files: File[], folderName: string) => {
+  const fileKeys: string[] = [];
+
+  for (const file of files) {
+    const fileKey = await uploadFileToS3(file, folderName);
+    fileKeys.push(fileKey);
+  }
+
+  return fileKeys;
+};
+
 export const uploadFileToS3 = async (file: File, folderName: string): Promise<string> => {
   const filePath = `${folderName}/${file.name}`;
   const fileType = file.type;
@@ -25,5 +36,3 @@ export const uploadFileToS3 = async (file: File, folderName: string): Promise<st
 
   return key;
 };
-
-export default uploadFileToS3

@@ -7,11 +7,23 @@ export const getGalleries = async () => {
 
   try {
     const data = await axios.get(`${process.env.BACKEND_URL}/api/gallery/`);
-    galleries = data.data
-   
+    galleries = data.data;
   } catch (err: any) {
     throw new HttpError(err.response?.data, err.response?.status);
   }
 
   return galleries;
+};
+
+export const getGallery = async (idOrTitle: string) => {
+  let gallery: GalleryDoc;
+
+  try {
+    const data = await axios.get(`${process.env.BACKEND_URL}/api/gallery/${idOrTitle}`);
+    gallery = data.data;
+  } catch (err: any) {
+    throw new HttpError(err.response?.data, err.response?.status);
+  }
+
+  return gallery;
 };

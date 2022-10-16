@@ -1,4 +1,4 @@
-.heading-primary {  
+h1, .heading-primary {  
   color: $color-tertiary;
   font-size: 6rem;
   font-weight: 600;
@@ -6,7 +6,7 @@
   letter-spacing: -1px;
 }
 
-.heading-secondary {
+ h2,.heading-secondary {
   font-size: 4.5rem;
   color: $color-primary;
   font-weight: 600;
@@ -14,7 +14,7 @@
   text-transform: uppercase;
 }
 
-.heading-tertiary {
+h3, .heading-tertiary {
   font-size: 3rem;
   color: $color-primary;
   font-weight: 500;

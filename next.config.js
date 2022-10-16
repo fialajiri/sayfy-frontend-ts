@@ -6,7 +6,7 @@ module.exports = (phase) => {
   if (phase === PHASE_DEVELOPMENT_SERVER) {
     return {
       images: {
-        domains: ["https://sayfyho-memorial.s3.eu-central-1.amazonaws.com"],
+        domains: ["sayfyho-memorial.s3.eu-central-1.amazonaws.com"],
       },
       env: {
         BACKEND_URL: "http://localhost:5000",
@@ -18,7 +18,7 @@ module.exports = (phase) => {
   if (phase === PHASE_TEST) {
     return {
       images: {
-        domains: ["https://sayfyho-memorial.s3.eu-central-1.amazonaws.com"],
+        domains: ["sayfyho-memorial.s3.eu-central-1.amazonaws.com"],
       },
       env: {
         BACKEND_URL: "http://localhost:5000",
@@ -29,7 +29,7 @@ module.exports = (phase) => {
 
   return {
     images: {
-      domains: ["https://sayfyho-memorial.s3.eu-central-1.amazonaws.com"],
+      domains: ["sayfyho-memorial.s3.eu-central-1.amazonaws.com"],
     },
 
     env: {
