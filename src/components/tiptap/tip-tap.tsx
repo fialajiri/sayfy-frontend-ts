@@ -12,7 +12,7 @@ import Link from '@tiptap/extension-link'
 import Youtube from '@tiptap/extension-youtube'
 import { Dispatch, Fragment, SetStateAction, useCallback, useEffect, useState } from "react";
 import ModalFilePicker from "../ui-elements/modal-file-picker";
-import MenuBar from "./MenuBar";
+import MenuBar from "./menu-bar";
 
 export interface TiptapProps {
   content: string;

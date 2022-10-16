@@ -1,7 +1,7 @@
 import Modal from "./modal";
 import MultipleImageUpload from "../form-elements/multiple-image-upload";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { FileData } from "../tiptap/Tiptap";
+import { FileData } from "../tiptap/tip-tap";
 import { Editor } from "@tiptap/react";
 
 export interface ModalFilePickerProps {

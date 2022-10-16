@@ -1,0 +1,21 @@
+.editor-menu {
+  &__container {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__commands{
+    display: flex;
+    gap: 0.5rem;
+
+
+      
+      button {
+          display: flex;
+          background-color: white;
+          border:none;
+          gap: 1rem;
+          padding: .5rem;
+        }
+    }
+}

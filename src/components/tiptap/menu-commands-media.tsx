@@ -1,18 +1,18 @@
 import { useCallback } from "react";
 import { Editor } from "@tiptap/react";
-import Image from "next/image";
 
 import imageIcon from "../../../public/icons/editor/image-line.svg";
 import videoIcon from "../../../public/icons/editor/movie-line.svg";
 import LinkIcon from "../../../public/icons/editor/link.svg";
 import UnlinkIcon from "../../../public/icons/editor/link-unlink.svg";
+import MenuButton from "./menu-button";
 
-export interface MenuBarMediaCommandsProps {
+export interface MenuCommandsMediaProps {
   editor: Editor | null;
   showFilePicker: () => void;
 }
 
-const MenuBarMediaCommands: React.FC<MenuBarMediaCommandsProps> = ({ editor, showFilePicker }) => {
+const MenuCommandsMedia: React.FC<MenuCommandsMediaProps> = ({ editor, showFilePicker }) => {
   if (!editor) {
     return null;
   }
@@ -46,24 +46,21 @@ const MenuBarMediaCommands: React.FC<MenuBarMediaCommandsProps> = ({ editor, sho
   }, [editor]);
 
   return (
-    <div className="menu-bar__commands menu-bar__commands--media">
-      <button onClick={showFilePicker}>
-        <Image src={imageIcon} width={24} height={24} />
-      </button>
-      <button id="add" onClick={addYoutubeVideo}>
-      <Image src={videoIcon} width={24} height={24} />
-      </button>
-      <button onClick={setLink} className={editor.isActive("link") ? "is-active" : ""}>
-        <Image src={LinkIcon} width={24} height={24} />
-      </button>
-      <button
+    <div className="editor-menu__commands editor-menu__commands--media">
+      <MenuButton iconSrc={imageIcon} onClick={showFilePicker} />
+      <MenuButton iconSrc={videoIcon} onClick={addYoutubeVideo} />
+      <MenuButton
+        iconSrc={LinkIcon}
+        onClick={setLink}
+        className={editor.isActive("link") ? "is-active" : ""}
+      />
+      <MenuButton
+        iconSrc={UnlinkIcon}
         onClick={() => editor.chain().focus().unsetLink().run()}
         disabled={!editor.isActive("link")}
-      >
-        <Image src={UnlinkIcon} width={24} height={24} />
-      </button>
+      />
     </div>
   );
 };
 
-export default MenuBarMediaCommands;
+export default MenuCommandsMedia;

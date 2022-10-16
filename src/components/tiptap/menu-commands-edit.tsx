@@ -1,33 +1,31 @@
 import { Editor } from "@tiptap/react";
-import Image from "next/image";
 import arrowForwardIcon from "../../../public/icons/editor/arrow-go-forward-line.svg";
 import arrowBackIcon from "../../../public/icons/editor/arrow-go-back-line.svg";
+import MenuButton from "./menu-button";
 
-export interface MenuBarEditCommandsProps {
+export interface MenuCommandsEditProps {
   editor: Editor | null;
 }
 
-const MenuBarEditCommands: React.FC<MenuBarEditCommandsProps> = ({ editor }) => {
+const MenuCommandsEdit: React.FC<MenuCommandsEditProps> = ({ editor }) => {
   if (!editor) {
     return null;
   }
 
   return (
-    <div className="menu-bar__commands menu-bar__commands--edit">
-      <button
+    <div className="editor-menu__commands editor-menu__commands--edit">
+      <MenuButton
+        iconSrc={arrowBackIcon}
         onClick={() => editor.chain().focus().undo().run()}
         disabled={!editor.can().chain().focus().undo().run()}
-      >
-        <Image src={arrowBackIcon} width={24} height={24} />
-      </button>
-      <button
+      />
+      <MenuButton
+        iconSrc={arrowForwardIcon}
         onClick={() => editor.chain().focus().redo().run()}
         disabled={!editor.can().chain().focus().redo().run()}
-      >
-        <Image src={arrowForwardIcon} width={24} height={24} />
-      </button>
+      />
     </div>
   );
 };
 
-export default MenuBarEditCommands;
+export default MenuCommandsEdit;
