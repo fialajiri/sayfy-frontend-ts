@@ -19,7 +19,7 @@ const MenuCommandsMedia: React.FC<MenuCommandsMediaProps> = ({ editor, showFileP
 
   const setLink = useCallback(() => {
     const previousUrl = editor.getAttributes("link").href;
-    const url = window.prompt("URL", previousUrl);
+    const url = window.prompt("Vložte odkaz", previousUrl);
 
     if (url === null) {
       return;
@@ -47,17 +47,19 @@ const MenuCommandsMedia: React.FC<MenuCommandsMediaProps> = ({ editor, showFileP
 
   return (
     <div className="editor-menu__commands editor-menu__commands--media">
-      <MenuButton iconSrc={imageIcon} onClick={showFilePicker} />
-      <MenuButton iconSrc={videoIcon} onClick={addYoutubeVideo} />
+      <MenuButton iconSrc={imageIcon} onClick={showFilePicker} helpText="vložit obrázek" />
+      <MenuButton iconSrc={videoIcon} onClick={addYoutubeVideo} helpText="vložit video" />
       <MenuButton
         iconSrc={LinkIcon}
         onClick={setLink}
         className={editor.isActive("link") ? "is-active" : ""}
+        helpText="vložit odkaz"
       />
       <MenuButton
         iconSrc={UnlinkIcon}
         onClick={() => editor.chain().focus().unsetLink().run()}
         disabled={!editor.isActive("link")}
+        helpText="odstranit odkaz"
       />
     </div>
   );

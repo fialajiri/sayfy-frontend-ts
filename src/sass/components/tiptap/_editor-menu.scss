@@ -1,21 +1,45 @@
 .editor-menu {
   &__container {
+    position: relative;
+    padding: 1rem 0.5rem 2rem 0.5rem;
     display: flex;
     gap: 2rem;
+    background-color: white;
+    border-top: $border-line;
+    border-left: $border-line;
+    border-right: $border-line;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
   }
 
-  &__commands{
+  &__commands {
     display: flex;
     gap: 0.5rem;
 
+    button {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: white;
+      border: none;
+      gap: 1rem;
+      padding: 0.5rem;
 
-      
-      button {
-          display: flex;
-          background-color: white;
-          border:none;
-          gap: 1rem;
-          padding: .5rem;
-        }
+      &:hover {
+        background-color: $color-background;
+      }
+
+      & p {
+        position: absolute;
+        font-size: 1.4rem;
+        font-weight: 500;
+        bottom: 0%;
+        display: none;
+        color: $color-primary;
+      }
+
+      &:hover p {
+        display: flex;
+      }
     }
+  }
 }

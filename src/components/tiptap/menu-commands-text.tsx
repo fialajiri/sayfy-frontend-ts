@@ -25,34 +25,44 @@ const MenuCommandsText: React.FC<MenuCommandsTextProps> = ({ editor }) => {
         onClick={() => editor.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}
         className={editor.isActive("bold") ? "is-active" : ""}
+        helpText="tučné"
       />
       <MenuButton
         iconSrc={ItalicIcon}
         onClick={() => editor.chain().focus().toggleItalic().run()}
         disabled={!editor.can().chain().focus().toggleItalic().run()}
         className={editor.isActive("italic") ? "is-active" : ""}
+        helpText="kurzíva"
       />
       <MenuButton
         iconSrc={strikeThroughIcon}
         onClick={() => editor.chain().focus().toggleStrike().run()}
         disabled={!editor.can().chain().focus().toggleStrike().run()}
         className={editor.isActive("strike") ? "is-active" : ""}
+        helpText="přeškrtnuté"
       />
       <MenuButton
         iconSrc={superscriptIcon}
         onClick={() => editor.chain().focus().toggleSuperscript().run()}
         className={editor.isActive("superscript") ? "is-active" : ""}
+        helpText="horní index"
       />
       <MenuButton
         iconSrc={subscriptIcon}
         onClick={() => editor.chain().focus().toggleSubscript().run()}
         className={editor.isActive("subscript") ? "is-active" : ""}
+        helpText="dolní index"
       />
       <MenuButton
         iconSrc={separatorIcon}
         onClick={() => editor.chain().focus().setHorizontalRule().run()}
+        helpText="dělící čára"
       />
-      <MenuButton iconSrc={spaceIcon} onClick={() => editor.chain().focus().setHardBreak().run()} />
+      <MenuButton
+        iconSrc={spaceIcon}
+        onClick={() => editor.chain().focus().setHardBreak().run()}
+        helpText="mezera"
+      />
     </div>
   );
 };

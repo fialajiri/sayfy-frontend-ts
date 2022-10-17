@@ -22,36 +22,38 @@ const MenuCommandsParagraph: React.FC<MenuCommandsParagraphProps> = ({ editor })
         iconSrc={bulletListIcon}
         onClick={() => editor.chain().focus().toggleBulletList().run()}
         className={editor.isActive("bulletList") ? "is-active" : ""}
+        helpText="číslovaný seznam"
       />
       <MenuButton
         iconSrc={orderedListIcon}
         onClick={() => editor.chain().focus().toggleOrderedList().run()}
         className={editor.isActive("orderedList") ? "is-active" : ""}
+        helpText="nečíslovaný seznam"
       />
       <MenuButton
         iconSrc={allignLeftIcon}
         onClick={() => editor.chain().focus().setTextAlign("left").run()}
         className={editor.isActive({ textAlign: "left" }) ? "is-active" : ""}
+        helpText="zarovnat doleva"
       />
       <MenuButton
         iconSrc={allignCenterIcon}
         onClick={() => editor.chain().focus().setTextAlign("center").run()}
         className={editor.isActive({ textAlign: "center" }) ? "is-active" : ""}
+        helpText="zarovnat na střed"
       />
       <MenuButton
         iconSrc={allignRightIcon}
         onClick={() => editor.chain().focus().setTextAlign("right").run()}
         className={editor.isActive({ textAlign: "right" }) ? "is-active" : ""}
+        helpText="zarovnat doprava"
       />
-      <MenuButton
-        iconSrc={allignLeftIcon}
-        onClick={() => editor.chain().focus().setTextAlign("left").run()}
-        className={editor.isActive({ textAlign: "left" }) ? "is-active" : ""}
-      />
+
       <MenuButton
         iconSrc={allignJustifyIcon}
         onClick={() => editor.chain().focus().setTextAlign("justify").run()}
         className={editor.isActive({ textAlign: "justify" }) ? "is-active" : ""}
+        helpText="zarovnat do bloku"
       />
     </div>
   );

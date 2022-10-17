@@ -18,11 +18,13 @@ const MenuCommandsEdit: React.FC<MenuCommandsEditProps> = ({ editor }) => {
         iconSrc={arrowBackIcon}
         onClick={() => editor.chain().focus().undo().run()}
         disabled={!editor.can().chain().focus().undo().run()}
+        helpText="zpět"
       />
       <MenuButton
         iconSrc={arrowForwardIcon}
         onClick={() => editor.chain().focus().redo().run()}
         disabled={!editor.can().chain().focus().redo().run()}
+        helpText="vpřed"
       />
     </div>
   );
