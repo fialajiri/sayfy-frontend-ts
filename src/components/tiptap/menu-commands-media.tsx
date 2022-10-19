@@ -1,6 +1,5 @@
 import { useCallback } from "react";
 import { Editor } from "@tiptap/react";
-
 import imageIcon from "../../../public/icons/editor/image-line.svg";
 import videoIcon from "../../../public/icons/editor/movie-line.svg";
 import LinkIcon from "../../../public/icons/editor/link.svg";
@@ -20,17 +19,18 @@ const MenuCommandsMedia: React.FC<MenuCommandsMediaProps> = ({ editor, showFileP
   const setLink = useCallback(() => {
     const previousUrl = editor.getAttributes("link").href;
     const url = window.prompt("Vložte odkaz", previousUrl);
-
+   
+    
     if (url === null) {
       return;
     }
-
+    
     if (url === "") {
       editor.chain().focus().extendMarkRange("link").unsetLink().run();
       return;
     }
-
     editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
+    
   }, [editor]);
 
   const addYoutubeVideo = useCallback(() => {
@@ -47,7 +47,7 @@ const MenuCommandsMedia: React.FC<MenuCommandsMediaProps> = ({ editor, showFileP
 
   return (
     <div className="editor-menu__commands editor-menu__commands--media">
-      <MenuButton iconSrc={imageIcon} onClick={showFilePicker} helpText="vložit obrázek" />
+      <MenuButton iconSrc={imageIcon} onClick={showFilePicker} helpText="vložit soubor" />
       <MenuButton iconSrc={videoIcon} onClick={addYoutubeVideo} helpText="vložit video" />
       <MenuButton
         iconSrc={LinkIcon}

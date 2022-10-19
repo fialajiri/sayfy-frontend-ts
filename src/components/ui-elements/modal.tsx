@@ -8,10 +8,11 @@ import Backdrop from "./backdrop";
 export interface IModalOverlayProps {
   header: string;
   modalContent: JSX.Element;
+  bottomButtonText?:string
   hide: () => void;
 }
 
-const ModalOverlay: React.FC<IModalOverlayProps> = ({ header, modalContent, hide }) => {
+const ModalOverlay: React.FC<IModalOverlayProps> = ({ header, modalContent, hide, bottomButtonText }) => {
   const content = (
     <div className="modal">
       <header className="modal__header">
@@ -19,7 +20,7 @@ const ModalOverlay: React.FC<IModalOverlayProps> = ({ header, modalContent, hide
       </header>
       <div className="modal__content">
         {modalContent}
-        <Button onClick={hide}>Ok</Button>
+        <Button onClick={hide}>{bottomButtonText? bottomButtonText : 'Ok'}</Button>
       </div>
     </div>
   );
@@ -30,15 +31,16 @@ export interface IModalProps {
   isShow: boolean;
   header: string;
   modalContent: JSX.Element;
+  bottomButtonText?:string
   hide: () => void;
 }
 
-const Modal: React.FC<IModalProps> = ({ isShow, header, modalContent, hide }) => {
+const Modal: React.FC<IModalProps> = ({ isShow, header, modalContent, hide, bottomButtonText }) => {
   return (
     <React.Fragment>
       {isShow && <Backdrop onClick={hide} />}
       <CSSTransition in={isShow} mountOnEnter unmountOnExit timeout={200} classNames="modal">
-        <ModalOverlay header={header} modalContent={modalContent} hide={hide} />
+        <ModalOverlay header={header} modalContent={modalContent} hide={hide} bottomButtonText={bottomButtonText} />
       </CSSTransition>
     </React.Fragment>
   );

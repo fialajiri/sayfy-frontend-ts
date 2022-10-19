@@ -23,7 +23,7 @@
       background-color: $color-sayfy-logo;
   }
 
-  &--inverse {
+  &--inverse {   
     background: transparent;    
     border: $border-line;
     color: $color-primary-dark2;
@@ -31,8 +31,8 @@
 
     &:hover{
         background-color: transparent;
-
-        border: 1px solid $color-primary-dark2;
+        color: $color-primary-dark2;
+        border: 2px solid $color-primary-dark2;
     }
 
   }
@@ -55,7 +55,7 @@
   }
 
   &--small {
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     font-size: 1.2rem;
     font-weight: 400;
   }

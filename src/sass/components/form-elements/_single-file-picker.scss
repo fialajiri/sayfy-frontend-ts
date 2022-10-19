@@ -1,0 +1,34 @@
+.single-file-picker{
+
+    &__container{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       gap: 2rem;
+       margin-bottom: 4rem;
+
+
+    }
+
+    &__file-input-container{
+        margin: 2rem 0;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__preview{
+
+    }
+
+    &__file-name{
+        font-size: 1.6rem;
+    }
+
+    &__error{
+        font-size: 1.6rem;
+        color: $color-tertiary;
+    }
+
+}

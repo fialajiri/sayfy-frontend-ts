@@ -2,16 +2,16 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Image from "@tiptap/extension-image";
 import Subscript from "@tiptap/extension-subscript";
-import Superscript from '@tiptap/extension-superscript'
-import Table from '@tiptap/extension-table'
-import TableCell from '@tiptap/extension-table-cell'
-import TableHeader from '@tiptap/extension-table-header'
-import TableRow from '@tiptap/extension-table-row'
-import TextAlign from '@tiptap/extension-text-align'
-import Link from '@tiptap/extension-link'
-import Youtube from '@tiptap/extension-youtube'
+import Superscript from "@tiptap/extension-superscript";
+import Table from "@tiptap/extension-table";
+import TableCell from "@tiptap/extension-table-cell";
+import TableHeader from "@tiptap/extension-table-header";
+import TableRow from "@tiptap/extension-table-row";
+import TextAlign from "@tiptap/extension-text-align";
+import Link from "@tiptap/extension-link";
+import Youtube from "@tiptap/extension-youtube";
 import { Dispatch, Fragment, SetStateAction, useCallback, useEffect, useState } from "react";
-import ModalFilePicker from "../ui-elements/modal-file-picker";
+import ModalFilePicker from "./modal-file-picker";
 import MenuBar from "./menu-bar";
 
 export interface TiptapProps {
@@ -20,7 +20,7 @@ export interface TiptapProps {
 }
 
 export interface FileData {
-  file: File;
+  file: File; 
   localUrl: string;
 }
 
@@ -28,8 +28,7 @@ const Tiptap: React.FC<TiptapProps> = ({ content, setContent }) => {
   const [isSelectingFile, setIsSelectingFile] = useState(false);
   const [selectedFiles, setSelectedFiles] = useState<FileData[]>([]);
 
-  useEffect(() => {
-    console.log("useeffect");
+  useEffect(() => {   
     console.log(selectedFiles);
   }, [selectedFiles]);
 
@@ -38,7 +37,22 @@ const Tiptap: React.FC<TiptapProps> = ({ content, setContent }) => {
   }, [content]);
 
   const editor = useEditor({
-    extensions: [StarterKit, Image, Subscript, Superscript, Table, TableCell, TableHeader, TableRow, TextAlign, Youtube, Link],
+    extensions: [
+      StarterKit,
+      Image,
+      Subscript,
+      Superscript,
+      Table,
+      TableCell,
+      TableHeader,
+      TableRow,
+      TextAlign,
+      Youtube,
+      Link.configure({
+        openOnClick: false,
+        linkOnPaste: true,
+      }),
+    ],
     content: content,
     onUpdate({ editor }) {
       setContent(editor.getHTML());
@@ -63,6 +77,8 @@ const Tiptap: React.FC<TiptapProps> = ({ content, setContent }) => {
   const hideModalFilePicker = () => {
     setIsSelectingFile(false);
   };
+
+ 
 
   return (
     <Fragment>
