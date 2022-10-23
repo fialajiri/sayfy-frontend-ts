@@ -8,11 +8,12 @@ import MenuCommandsTable from "./menu-commands-table";
 import MenuCommandsEdit from "./menu-commands-edit";
 
 export interface MenuBarProps {
+  liteMode?: boolean;
   editor: Editor | null;
-  showFilePicker: () => void;
+  showFilePicker?: () => void;
 }
 
-const MenuBar: React.FC<MenuBarProps> = ({ editor, showFilePicker }) => {
+const MenuBar: React.FC<MenuBarProps> = ({ editor, showFilePicker, liteMode }) => {
   if (!editor) {
     return null;
   }
@@ -22,8 +23,8 @@ const MenuBar: React.FC<MenuBarProps> = ({ editor, showFilePicker }) => {
       <MenuCommandsText editor={editor} />
       <MenuCommandsHeading editor={editor} />
       <MenuCommandsParagraph editor={editor} />
-      <MenuCommandsMedia editor={editor} showFilePicker={showFilePicker} />
-      <MenuCommandsTable editor={editor} />
+     {(!liteMode && showFilePicker) && <MenuCommandsMedia editor={editor} showFilePicker={showFilePicker} />}
+     {!liteMode && <MenuCommandsTable editor={editor} />}
       <MenuCommandsEdit editor={editor} />
     </div>
   );

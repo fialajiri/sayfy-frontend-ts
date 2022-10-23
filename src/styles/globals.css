@@ -862,6 +862,8 @@ tr:nth-child(even) {
   border-right: 2px solid #1b7a57;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem; }
+  .editor-menu__container:focus {
+    background-color: #e8f2ee; }
 
 .editor-menu__commands {
   display: flex;
@@ -914,3 +916,42 @@ tr:nth-child(even) {
   height: 30rem;
   border-radius: 2rem;
   overflow: hidden; }
+
+.new-aktualita__container {
+  margin-top: 6rem;
+  margin-bottom: 15rem;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 2.4rem;
+  font-weight: 500; }
+
+.new-aktualita__form {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; }
+
+.new-aktualita__form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; }
+  .new-aktualita__form-control label {
+    color: #5f236e; }
+
+.new-aktualita__form--button {
+  align-self: center; }
+
+.form-input {
+  display: block;
+  border-radius: 2rem;
+  font: inherit;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  border: 2px solid #1b7a57;
+  background-color: white;
+  padding: 0.6rem 1rem;
+  width: 100%; }
+  .form-input:focus {
+    outline: none;
+    border: 2px solid #5f236e; }

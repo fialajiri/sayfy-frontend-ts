@@ -9,8 +9,10 @@ export interface AktualitaDoc {
   date: string;
   title: string;
   perex: string;
-  message: string;
-  imageUrl: string;
+  text: string;
+  mainPhoto: string;
+  photoGallery: string[];
+  filesFromEditor:string[]
 }
 
 export interface GalleryDoc {

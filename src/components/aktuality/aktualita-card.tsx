@@ -9,7 +9,7 @@ const AktualitaCard: React.FC<AktualitaCardProps> = ({ aktualita }) => {
   return (
     <div className="aktualita-card__container">
       <div className="aktualita-card__text-container">
-        <div className="heading-tertiary aktualita-card__heading">{aktualita.title}</div>
+        <h3 className="heading-tertiary aktualita-card__heading">{aktualita.title}</h3>
         <div className="aktualita-card__datum">
           {new Date(aktualita.date).toLocaleDateString("cs-CZ")}
         </div>

@@ -2,8 +2,11 @@ import axios from "axios";
 import { GalleryDoc } from "../../models/models";
 import { HttpError } from "../../models/error-model";
 
+const SERVER_URL = "http://localhost:5000";
+
 export const getGalleries = async () => {
   let galleries: GalleryDoc[];
+  console.log(`${process.env.BACKEND_URL}/api/gallery/`)
 
   try {
     const data = await axios.get(`${process.env.BACKEND_URL}/api/gallery/`);

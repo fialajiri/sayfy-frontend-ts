@@ -34,5 +34,5 @@ export const uploadFileToS3 = async (file: File, folderName: string): Promise<st
 
   await axios.put(signedUrl, file, { headers: { "Content-Type": fileType } });
 
-  return key;
+  return `${process.env.IMAGE_DOMAIN}/${key}`;
 };

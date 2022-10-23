@@ -15,22 +15,26 @@ import ModalFilePicker from "./modal-file-picker";
 import MenuBar from "./menu-bar";
 
 export interface TiptapProps {
+  liteMode?: boolean;
   content: string;
   setContent: Dispatch<SetStateAction<string>>;
+  selectedFiles: FileData[];
+  setSelectedFiles: Dispatch<SetStateAction<FileData[]>>;
 }
 
 export interface FileData {
-  file: File; 
+  file: File;
   localUrl: string;
 }
 
-const Tiptap: React.FC<TiptapProps> = ({ content, setContent }) => {
+const Tiptap: React.FC<TiptapProps> = ({
+  content,
+  setContent,
+  setSelectedFiles,
+  selectedFiles,
+  liteMode,
+}) => {
   const [isSelectingFile, setIsSelectingFile] = useState(false);
-  const [selectedFiles, setSelectedFiles] = useState<FileData[]>([]);
-
-  useEffect(() => {   
-    console.log(selectedFiles);
-  }, [selectedFiles]);
 
   useEffect(() => {
     checkIfFileWasDeleted(content, selectedFiles);
@@ -78,19 +82,17 @@ const Tiptap: React.FC<TiptapProps> = ({ content, setContent }) => {
     setIsSelectingFile(false);
   };
 
- 
-
   return (
-    <Fragment>
+    <div className="tip-tap__container">
       <ModalFilePicker
         isShow={isSelectingFile}
         setFiles={setSelectedFiles}
         hide={hideModalFilePicker}
         editor={editor}
       />
-      <MenuBar editor={editor} showFilePicker={showModalFilePicker} />
+      <MenuBar liteMode={liteMode} editor={editor} showFilePicker={showModalFilePicker} />
       <EditorContent editor={editor} />
-    </Fragment>
+    </div>
   );
 };
 

@@ -1,13 +1,16 @@
 import React, { useState, useEffect, useRef, Fragment } from "react";
 import Image from "next/image";
 import Button from "../ui-elements/button";
+import { createFileFromUrl } from "../../utils/create-file-from-url";
 
 export interface MultipleImageUploadProps {
   isValid: boolean;
   maxFiles: number;
-  errorText: string;
+  errorText?: string;
   className?: string;
   inputId: string;
+  buttonLabel: string;
+  initialFilesUrl?: string[];
   setImages: (images: File[]) => void;
   setIsValid: (isValid: boolean) => void;
 }
@@ -15,6 +18,24 @@ export interface MultipleImageUploadProps {
 const MultipleImageUpload: React.FC<MultipleImageUploadProps> = (props) => {
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
   const filePickerRef = useRef<any>(null);
+
+  useEffect(() => {
+    const setInitialFiles = async () => {
+      const fileArray = []
+      if (props.initialFilesUrl) {
+        for (let i = 0; i < props.initialFilesUrl.length; i++) {
+          const file = await createFileFromUrl(props.initialFilesUrl[i]);
+          fileArray.push(file)
+          setSelectedImages((currentImages) => [
+            ...currentImages,
+            URL.createObjectURL(file),
+          ]);
+        }
+      }
+      props.setImages(fileArray)
+    };
+    setInitialFiles();
+  }, []);
 
   const clearImageSelection = () => {
     props.setImages([]);
@@ -75,7 +96,7 @@ const MultipleImageUpload: React.FC<MultipleImageUploadProps> = (props) => {
             type="button"            
             onClick={pickImageHandler}
           >
-            Vyberte obrázky
+           {props.buttonLabel}
           </Button>
         {!props.isValid && <p className="multiple-image-upload__error-text">{props.errorText}</p>}
         </div>
