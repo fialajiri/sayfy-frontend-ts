@@ -34,7 +34,7 @@ const CreateNewGallery: React.FC = () => {
   };
 
   if (!isAdmin) {
-    router.push("/login");
+    typeof window !== 'undefined' && router.push("/login");
     return <LoadingSpinner asOverlay />;
   } else {
     return (
@@ -58,6 +58,7 @@ const CreateNewGallery: React.FC = () => {
               isValid={imagesValid}
               setImages={setSelectedImages}
               setIsValid={setImagesValid}
+              buttonLabel="Vyberte fotografie"
             />
             <div className="new-gallery__form--button-container">
               <Button>Vytvořit</Button>

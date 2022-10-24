@@ -1,4 +1,7 @@
+import axios from "axios";
 import { useCallback, useRef, useState, useEffect } from "react";
+import { HttpError } from "../models/error-model";
+import { AXIOS_CONFIG } from "../models/axios-config";
 
 export enum MethodEnum {
   GET = "GET",
@@ -17,7 +20,7 @@ interface RequestConfig {
 
 export const useHttpClient = () => {
   const [isLoading, setIsLoading] = useState<Boolean>(false);
-  const [errors, setErrors] = useState<string[]>([]);
+  const [error, setError] = useState<HttpError | null>(null);
 
   const activeHttpRequest = useRef<AbortController[]>([]);
 
@@ -29,26 +32,22 @@ export const useHttpClient = () => {
       activeHttpRequest.current.push(httpAbortCtrl);
 
       try {
-        const response = await fetch(url, {
+        const { data } = await axios(url, {
           method,
-          body,
-          headers,
+          data: body,
           signal: httpAbortCtrl.signal,
+          headers: AXIOS_CONFIG.headers,
+          withCredentials: AXIOS_CONFIG.withCredentials,
         });
-
-        const responseData = await response.json();
 
         activeHttpRequest.current = activeHttpRequest.current.filter(
           (reqCtrl) => reqCtrl !== httpAbortCtrl
         );
 
-        if (!response.ok) {
-          throw new Error(responseData.message);
-        }
         setIsLoading(false);
-        return responseData;
+        return data;
       } catch (err: any) {
-        setErrors((preState) => [...preState, err.message]);
+        setError(err);
         setIsLoading(false);
         throw err;
       }
@@ -57,7 +56,7 @@ export const useHttpClient = () => {
   );
 
   const clearError = () => {
-    setErrors([]);
+    setError(null);
   };
 
   useEffect(() => {
@@ -66,5 +65,5 @@ export const useHttpClient = () => {
     };
   }, []);
 
-  return { isLoading, errors, sendRequest, clearError };
+  return { isLoading, error, sendRequest, clearError };
 };

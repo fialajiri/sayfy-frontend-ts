@@ -8,15 +8,26 @@ enum EditorIconSize {
 export interface MenuButtonProps {
   onClick: (() => void) | (() => boolean);
   iconSrc: string;
-  helpText:string;
+  helpText: string;
   className?: string;
   disabled?: boolean;
 }
 
-const MenuButton: React.FC<MenuButtonProps> = ({ onClick, disabled, iconSrc, className, helpText }) => {
+const MenuButton: React.FC<MenuButtonProps> = ({
+  onClick,
+  disabled,
+  iconSrc,
+  className,
+  helpText,
+}) => {
   return (
-    <button onClick={onClick} disabled={disabled} className={className}>
-      <Image src={iconSrc} width={EditorIconSize.WIDTH} height={EditorIconSize.HEIGHT} layout={"fixed"}/>
+    <button onClick={onClick} disabled={disabled} className={className} type="button">
+      <Image
+        src={iconSrc}
+        width={EditorIconSize.WIDTH}
+        height={EditorIconSize.HEIGHT}
+        layout={"fixed"}
+      />
       <p>{helpText}</p>
     </button>
   );

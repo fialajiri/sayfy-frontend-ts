@@ -1,6 +1,5 @@
 export const maxLength = (value: string, maxSize: number) => {
-  const stripedValue = stripHtml(value);
-  console.log(stripedValue.length)
+  const stripedValue = stripHtml(value); 
   return stripedValue.length <= maxSize;
 };
 

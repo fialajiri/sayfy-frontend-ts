@@ -6,11 +6,12 @@ export interface ErrorData {
   ];
 }
 
-export class HttpError {
-  public status: string | undefined;
+export class HttpError extends Error {
+  public status: string | undefined;  
   public messages: string[] | undefined;
 
-  constructor(errorData: ErrorData | undefined, status: string | undefined) {
+  constructor(message:string | undefined, errorData: ErrorData | undefined, status: string | undefined) {
+    super(message)
     if (errorData) {
       this.messages = errorData.errors.map((error) => error.message);
     } else {
