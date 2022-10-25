@@ -20,7 +20,7 @@ const GalleryDetailPage: NextPage<GalleryDetailPageProps> = ({ gallery }) => {
       <h2 className="heading-secondary"> {gallery.title}</h2>
       <ul className="gallery-detail__image-container">
       {gallery.images.map((image) => (
-        <ImageCard imageUrl={image} key={image} isKey={true} onClick={imageOnClickHandler} />
+        <ImageCard imageUrl={image} key={image} isKey={true} onClick={imageOnClickHandler} alt={image}/>
       ))}
       </ul>
     </div>

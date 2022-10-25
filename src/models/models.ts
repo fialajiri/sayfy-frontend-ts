@@ -1,3 +1,5 @@
+import { ParsedUrlQuery } from "querystring";
+
 export interface UserDoc {
   id: string;
   email: string;
@@ -5,14 +7,15 @@ export interface UserDoc {
 }
 
 export interface AktualitaDoc {
-  id: string;
-  date: string;
+  id: string; 
   title: string;
+  aktualitaUrl:string
   perex: string;
   text: string;
   mainPhoto: string;
   photoGallery: string[];
-  filesFromEditor:string[]
+  filesFromEditor:string[];
+  createdAt:string
 }
 
 export interface GalleryDoc {
@@ -24,4 +27,8 @@ export interface GalleryDoc {
 export interface ErrorDoc {
   messages: string[];
   status:number
+}
+
+export interface IParams extends ParsedUrlQuery {
+  title: string;
 }

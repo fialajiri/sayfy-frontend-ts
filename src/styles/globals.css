@@ -955,3 +955,49 @@ tr:nth-child(even) {
   .form-input:focus {
     outline: none;
     border: 2px solid #5f236e; }
+
+.aktualita-detail__container {
+  margin: 6rem auto;
+  margin-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 50%;
+  font-size: 2rem;
+  color: #0e3d2c;
+  gap: 2rem; }
+  .aktualita-detail__container img {
+    max-width: 40%;
+    margin: 0 auto; }
+
+.aktualita-detail__date {
+  align-self: flex-start;
+  font-size: 2rem;
+  font-style: italic; }
+
+.aktualita-detail__main-image {
+  margin: 2rem;
+  position: relative;
+  width: 60rem;
+  height: 40rem;
+  border-radius: 2rem;
+  display: flex;
+  overflow: hidden; }
+
+.aktualita-detail__perex {
+  font-size: 2.4rem;
+  font-weight: 500; }
+
+.aktualita-detail__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; }
+  .aktualita-detail__text li,
+  .aktualita-detail__text ul {
+    margin: 1rem 0 1rem 1.6rem; }
+
+.aktualita-detail__gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem; }

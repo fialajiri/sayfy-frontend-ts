@@ -19,11 +19,12 @@ export const getAktualita = async (idOrTitle: string) => {
   let aktualita: AktualitaDoc;
 
   try {
-    const data = await axios.get(`${process.env.BACKEND_URL}/api/aktualita`);
+    const data = await axios.get(`${process.env.BACKEND_URL}/api/aktualita/${idOrTitle}`);
     aktualita = data.data;
   } catch (err: any) {
     throw new HttpError(err.message, err.response?.data, err.response?.status);
   }
+ 
 
   return aktualita;
 };
