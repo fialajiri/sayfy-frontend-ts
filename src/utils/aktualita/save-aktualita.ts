@@ -15,7 +15,7 @@ export interface aktualitaData {
   filesFromEditor: FileData[];
 }
 
-export const saveAktualita = async (aktualitaData: aktualitaData) => {
+export const saveAktualita = async (aktualitaData: aktualitaData): Promise<void> => {
   const { id, title, perex, text, mainPhoto, photoGallery, filesFromEditor } = aktualitaData;
   const editorFilesUrls: string[] = [];
   let textWithReplacedFileUrls = text;

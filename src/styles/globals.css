@@ -819,6 +819,53 @@ tr:nth-child(even) {
   flex-wrap: wrap;
   gap: 4rem; }
 
+.vysledky__container {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem; }
+
+.vysledky__list {
+  display: flex;
+  align-content: space-around;
+  justify-content: space-around;
+  gap: 4rem;
+  list-style: none; }
+
+.vysledek__container {
+  margin: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; }
+
+.vysledek__iframe-container {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  border-radius: 2rem; }
+
+.vysledek__iframe {
+  border-radius: 2rem;
+  border: 2px solid #1b7a57;
+  width: 100%;
+  height: 100vh;
+  padding-top: 2rem; }
+
+.aktuality__container {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem; }
+
+.aktuality__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8rem; }
+
 /* Basic editor styles */
 .ProseMirror {
   padding: 1rem;
@@ -901,8 +948,8 @@ tr:nth-child(even) {
 .aktualita-card__text-container {
   display: flex;
   flex-direction: column;
-  margin-bottom: .5rem;
-  padding: 0 .5rem; }
+  margin-bottom: 0.5rem;
+  padding: 0 0.5rem; }
 
 .aktualita-card__datum {
   font-size: 1.8rem;
@@ -916,6 +963,36 @@ tr:nth-child(even) {
   height: 30rem;
   border-radius: 2rem;
   overflow: hidden; }
+
+.aktualita-card-detail__container {
+  display: flex;
+  border-radius: 2rem;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.2); }
+
+.aktualita-card-detail__text-container {
+  padding: 1rem 1rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; }
+
+.aktualita-card-detail__image {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 40rem;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  overflow: hidden; }
+
+.aktualita-card-detail__datum {
+  font-size: 1.8rem;
+  font-weight: 500;
+  font-style: italic;
+  color: #5f236e; }
+
+.aktualita-card-detail__perex {
+  font-size: 2rem;
+  color: #0e3d2c; }
 
 .new-aktualita__container {
   margin-top: 6rem;

@@ -32,3 +32,16 @@ export interface ErrorDoc {
 export interface IParams extends ParsedUrlQuery {
   title: string;
 }
+
+export interface VysledekDoc {
+  rocnik:number;
+  rok:string;
+  url:string;
+}
+
+export interface PropoziceDoc{
+  id:string;
+  title: string;
+  text: string;
+  assets: string[];
+}

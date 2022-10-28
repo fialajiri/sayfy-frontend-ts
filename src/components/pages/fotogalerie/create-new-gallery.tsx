@@ -52,7 +52,7 @@ const CreateNewGallery: React.FC = () => {
               setValue={setGalleryName}
             />
             <MultipleImageUpload
-              maxFiles={150}
+              maxFiles={200}
               errorText="Vyberte maximálně 100 obrázků"
               inputId="images"
               isValid={imagesValid}

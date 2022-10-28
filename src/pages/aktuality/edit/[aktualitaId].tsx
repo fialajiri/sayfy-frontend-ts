@@ -7,12 +7,7 @@ import LoadingSpinner from "../../../components/ui-elements/loading-spinner";
 import { useAuth } from "../../../context/auth-context";
 import { AktualitaDoc } from "../../../models/models";
 
-
-interface EditAktualitaProps {
-  aktualita: AktualitaDoc;
-}
-
-const EditAktualitaPage: NextPage<EditAktualitaProps> = ({}) => {
+const EditAktualitaPage: NextPage = () => {
   const [aktualita, setAktualita] = useState<AktualitaDoc | undefined>(undefined);
   const router = useRouter();
   const { isAdmin } = useAuth();
@@ -22,7 +17,7 @@ const EditAktualitaPage: NextPage<EditAktualitaProps> = ({}) => {
       const { data: aktualita }: { data: AktualitaDoc } = await axios.get(
         `${process.env.BACKEND_URL}/api/aktualita/${id}`
       );
-      console.log(aktualita);
+
       setAktualita(aktualita);
     };
 
@@ -43,14 +38,3 @@ const EditAktualitaPage: NextPage<EditAktualitaProps> = ({}) => {
 };
 
 export default EditAktualitaPage;
-
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   const aktuality: AktualitaDoc[] = await getAktuality();
-//   const ids = aktuality.map((newsItem) => newsItem.id);
-//   const pathsWithParams = ids.map((id) => ({ params: { aktualitaId: id } }));
-
-//   return {
-//     paths: pathsWithParams,
-//     fallback: true,
-//   };
-// };
