@@ -19,9 +19,6 @@
     padding: 0 0.5rem;
   }
 
-  &__heading {
-  }
-
   &__datum {
     font-size: 1.8rem;
     font-weight: 500;
@@ -43,10 +40,20 @@
     display: flex;
     border-radius: $border-radius;
     box-shadow: $shadow-dark;
+
+    @include respond(tab-land) {
+     
+    }
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      max-width: 70rem;
+      gap: 4rem;
+    }
   }
 
   &__text-container {
-    padding: 1rem 1rem 1rem 2rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -60,6 +67,20 @@
     border-top-right-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
     overflow: hidden;
+
+    @include respond(tab-land) {
+      height: 35rem;
+    }
+
+    @include respond(tab-port) {
+      border-top-right-radius: 0%;
+      border-bottom-left-radius: $border-radius;
+      height: 45rem;
+    }
+
+    @include respond(phone){
+      height: 35rem;
+    }
   }
 
   &__datum {

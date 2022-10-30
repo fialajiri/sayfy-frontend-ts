@@ -14,14 +14,6 @@ const FotoGaleriePage: React.FC<FotoGaleriePageProps> = ({ galleries }) => {
   const imageOnClickHandler = (e: React.MouseEvent<HTMLLIElement>, path: string) =>
     router.push(`fotogalerie/${path}`);
 
-  galleries.forEach((gal) => console.log(gal.images[0]));
-
-  // imageUrl={
-  //   gallery.images[0].includes("https")
-  //     ? gallery.images[0]
-  //     : `${process.env.IMAGE_DOMAIN}/${gallery.images[0]}`
-  // }
-
   return (
     <div className="fotogalerie-page__container">
       <h2 className="heading-secondary">Fotogalerie</h2>
@@ -41,7 +33,7 @@ const FotoGaleriePage: React.FC<FotoGaleriePageProps> = ({ galleries }) => {
           </li>
         ))}
       </ul>
-      {isAdmin && <Button link="/fotogalerie/new">Navá fotogalerie</Button>}
+      {isAdmin && <Button link="/fotogalerie/new">Nová fotogalerie</Button>}
     </div>
   );
 };

@@ -12,13 +12,12 @@ export interface IParams extends ParsedUrlQuery {
 }
 
 const VysledkyDetail: NextPage<VysledkyDetailProps> = ({ vysledek }) => {
-    console.log(vysledek)
   return (
     <div className="vysledek__container">
       <h3>
         {vysledek.rocnik}. ročník - {vysledek.rok}
       </h3>
-      <div className="vysledek__iframe-container" >
+      <div className="vysledek__iframe-container">
         <iframe className="vysledek__iframe" src={vysledek.url}></iframe>
       </div>
     </div>
@@ -46,8 +45,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const pathWithParams = vysledky.map((vysledek) => ({
     params: { year: vysledek.rok },
   }));
-
-  console.log(pathWithParams);
 
   return {
     paths: pathWithParams,

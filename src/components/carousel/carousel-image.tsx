@@ -14,8 +14,8 @@ interface ImageCarouselProps {
 
 const responsive = {
   0: { items: 1 },
-  568: { items: 1 },
-  1024: { items: 2 },
+  900: { items: 2 },
+  1200: { items: 2 },
 };
 
 const CarouselImage: React.FC<ImageCarouselProps> = (props) => {

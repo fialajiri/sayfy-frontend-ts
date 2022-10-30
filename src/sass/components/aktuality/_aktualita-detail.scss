@@ -10,8 +10,20 @@
     color: $color-primary-dark3;
     gap: 2rem;
 
+    @include respond(tab-land) {
+      max-width: 60%;
+     }
+
+     @include respond(tab-port) {
+      max-width: 70%;
+     }
+
+     @include respond(phone) {
+      max-width: 90%;
+     }
+
     & img {
-      max-width: 40%;
+      max-width: 80%;
       margin: 0 auto;
     }
   }
@@ -19,7 +31,9 @@
   &__date {
     align-self: flex-start;
     font-size: 2rem;
+    font-weight: 500;
     font-style: italic;
+    color: $color-tertiary;
   }
 
   &__main-image {
@@ -30,6 +44,16 @@
     border-radius: $border-radius;
     display: flex;
     overflow: hidden;
+
+    @include respond(tab-land) {
+     width: 50rem;
+     height: 34rem;
+    }
+
+    @include respond(phone) {
+      width: 30rem;
+     height: 20rem;
+     }
   }
 
   &__perex {

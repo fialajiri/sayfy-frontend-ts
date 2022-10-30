@@ -6,6 +6,13 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    
+    @include respond(tab-port) {
+      flex-direction: column;
+      gap: 4rem;
+    }
+
   }
 
   &__wrapper {
@@ -21,6 +28,11 @@
       display: flex;
       width: 50rem;
       height: 55rem;
+
+      @include respond(phone-small) {
+        width: 35rem;
+       }
+
     }
     &--bike {
       position: relative;

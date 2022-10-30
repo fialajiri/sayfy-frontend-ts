@@ -1,0 +1,47 @@
+.propozice {
+  &__container {    
+    margin: 6rem 0;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 0 6rem;
+    
+    
+    
+    
+
+  }
+
+  &__html-content{
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    
+
+    & p{
+
+    }
+
+    & ul {
+
+        & li{
+            list-style: none;
+        }
+    }
+
+    & img{
+        margin: 4rem auto;
+        width: 60%;
+        border-radius: $border-radius;
+
+        @include respond(tab-port) {
+            width: 70%;
+           }
+      
+           @include respond(phone) {
+            width: 90%;
+           }
+        
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { AktualitaDoc } from "../../models/models";
 
 interface AktualitaCardProps {
@@ -15,7 +16,10 @@ const AktualitaCard: React.FC<AktualitaCardProps> = ({ aktualita, detail }) => {
           <div className="aktualita-card-detail__datum">
             {new Date(aktualita.createdAt).toLocaleDateString("cs-CZ")}
           </div>
-          <div className="aktualita-card-detail__perex"  dangerouslySetInnerHTML={{ __html: aktualita.perex }}></div>
+          <div
+            className="aktualita-card-detail__perex"
+            dangerouslySetInnerHTML={{ __html: aktualita.perex }}
+          ></div>
         </div>
         <figure className="aktualita-card-detail__image">
           <Image src={aktualita.mainPhoto} alt={aktualita.title} layout="fill" objectFit="cover" />
@@ -27,14 +31,18 @@ const AktualitaCard: React.FC<AktualitaCardProps> = ({ aktualita, detail }) => {
   return (
     <div className="aktualita-card__container">
       <div className="aktualita-card__text-container">
-        <h3 className="heading-tertiary aktualita-card__heading">{aktualita.title}</h3>
+        <Link href={`aktuality/${aktualita.aktualitaUrl}`}>
+          <a>
+            <h3 className="heading-tertiary aktualita-card__heading">{aktualita.title}</h3>
+          </a>
+        </Link>
         <div className="aktualita-card__datum">
-          {new Date(aktualita.date).toLocaleDateString("cs-CZ")}
+          {new Date(aktualita.createdAt).toLocaleDateString("cs-CZ")}
         </div>
       </div>
 
       <figure className="aktualita-card__image">
-        <Image src={aktualita.imageUrl} alt={aktualita.title} layout="fill" objectFit="cover" />
+        <Image src={aktualita.mainPhoto} alt={aktualita.title} layout="fill" objectFit="cover" />
       </figure>
     </div>
   );

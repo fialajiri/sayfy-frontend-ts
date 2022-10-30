@@ -8,11 +8,10 @@ interface PropozicePageProps {
     propozice:PropoziceDoc
 }
 
-const PropozicePage:NextPage<PropozicePageProps> = ({propozice}) => {
-    console.log(propozice)
+const PropozicePage:NextPage<PropozicePageProps> = ({propozice}) => {    
     const {text, title} = propozice
     const {isAdmin} = useAuth()
-    return <div className="propozice__container">
+    return <div className="propozice__container page-container">
         {isAdmin && <Button link="propozice/edit">Editovat</Button>}
         <h2>{title}</h2>
         <div className="propozice__html-content" dangerouslySetInnerHTML={{ __html: text }}></div>
