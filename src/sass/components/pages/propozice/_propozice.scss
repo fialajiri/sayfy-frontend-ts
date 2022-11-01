@@ -1,47 +1,38 @@
 .propozice {
-  &__container {    
+  &__container {
     margin: 6rem 0;
     display: flex;
     align-items: center;
     gap: 4rem;
     padding: 0 6rem;
-    
-    
-    
-    
-
   }
 
-  &__html-content{
+  &__html-content {
     font-size: 2rem;
     display: flex;
     flex-direction: column;
-    
 
-    & p{
-
+    & p {
     }
 
     & ul {
-
-        & li{
-            list-style: none;
-        }
+      & li {
+        list-style: none;
+      }
     }
 
-    & img{
-        margin: 4rem auto;
-        width: 60%;
-        border-radius: $border-radius;
+    & img {
+      margin: 4rem auto;
+      width: 60%;
+      border-radius: $border-radius;
 
-        @include respond(tab-port) {
-            width: 70%;
-           }
-      
-           @include respond(phone) {
-            width: 90%;
-           }
-        
+      @include respond(tab-port) {
+        width: 70%;
+      }
+
+      @include respond(phone) {
+        width: 90%;
+      }
     }
   }
 }

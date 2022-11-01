@@ -25,6 +25,7 @@
 @import "components/ui-elements/modal";
 @import "components/ui-elements/error_modal";
 @import "components/ui-elements/image-card";
+@import "components/ui-elements/photo-modal";
 
 
 @import "components/pages/homepage/sayfy-hero";
@@ -39,6 +40,8 @@
 @import "components/pages/vysledky/vysledky-detail";
 @import "components/pages/aktuality/aktuality";
 @import "components/pages/propozice/propozice";
+@import "components/pages/propozice/edit-propozice";
+
 
 @import "components/tiptap/editor";
 @import "components/tiptap/editor-menu";

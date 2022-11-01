@@ -5,6 +5,8 @@ import { AktualitaDoc } from "../../models/models";
 export const getAktuality = async () => {
   let aktuality: AktualitaDoc[];
 
+  console.log(process.env.BACKEND_URL)
+
   try {
     const data = await axios.get(`${process.env.BACKEND_URL}/api/aktualita`);
     aktuality = data.data;

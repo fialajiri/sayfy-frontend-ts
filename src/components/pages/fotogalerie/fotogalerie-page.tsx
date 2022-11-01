@@ -26,8 +26,7 @@ const FotoGaleriePage: React.FC<FotoGaleriePageProps> = ({ galleries }) => {
           >
             <ImageCard
               imageUrl={gallery.images[0]}
-              alt={gallery.title}
-              isKey={true}
+              alt={gallery.title}              
               title={gallery.title}
             />
           </li>

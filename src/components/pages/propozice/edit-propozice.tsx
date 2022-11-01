@@ -72,7 +72,7 @@ const EditPropozice: React.FC<EditPropoziceProps> = ({ propozice }) => {
             />
           </div>
           <div className="edit-propozice__form-control">
-            <label>Zpráva</label>
+            <label>Text</label>
             <Tiptap
               content={text}
               setContent={setText}

@@ -1,0 +1,77 @@
+.photo-modal {
+  z-index: 100;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  box-shadow: $shadow-dark;
+
+  &__content {
+    position: relative;
+  }
+
+  &__image--container {
+    display: flex;
+    width: 100%;
+    height: 100rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__image {
+    display: flex;
+  }
+
+  &__icon {
+    font-size: 4rem;
+    font-weight: 500;
+  }
+
+  &__button {
+    position: absolute;
+    border: none;
+    padding: 1rem 2rem;
+    color: $color-primary;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 300ms;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    &--left {
+      top: 50%;
+      left: 0;
+      transform: translate(10%, -50%);
+      transition: all 300ms;
+
+      &:hover {
+        transform: translate(-10%, -50%) scale(1.1);
+        color: $color-tertiary;
+      }
+    }
+
+    &--right {
+      top: 50%;
+      right: 0%;
+      transform: translate(-10%, -50%);
+      transition: all 300ms;
+
+      &:hover {
+        transform: translate(10%, -50%) scale(1.1);
+        color: $color-tertiary;
+      }
+    }
+
+    &--close {
+      left: 50%;
+      top: 98%;
+
+      &:hover {
+        
+        color: $color-tertiary;
+      }
+    }
+  }
+}

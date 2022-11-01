@@ -641,6 +641,60 @@ tr:nth-child(even) {
   background-color: rgba(232, 242, 238, 0.5);
   border-radius: 2rem; }
 
+.photo-modal {
+  z-index: 100;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.2); }
+  .photo-modal__content {
+    position: relative; }
+  .photo-modal__image--container {
+    display: flex;
+    width: 100%;
+    height: 100rem;
+    position: relative;
+    overflow: hidden; }
+  .photo-modal__image {
+    display: flex; }
+  .photo-modal__icon {
+    font-size: 4rem;
+    font-weight: 500; }
+  .photo-modal__button {
+    position: absolute;
+    border: none;
+    padding: 1rem 2rem;
+    color: #1b7a57;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 300ms;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+    .photo-modal__button--left {
+      top: 50%;
+      left: 0;
+      transform: translate(10%, -50%);
+      transition: all 300ms; }
+      .photo-modal__button--left:hover {
+        transform: translate(-10%, -50%) scale(1.1);
+        color: #5f236e; }
+    .photo-modal__button--right {
+      top: 50%;
+      right: 0%;
+      transform: translate(-10%, -50%);
+      transition: all 300ms; }
+      .photo-modal__button--right:hover {
+        transform: translate(10%, -50%) scale(1.1);
+        color: #5f236e; }
+    .photo-modal__button--close {
+      left: 50%;
+      top: 98%; }
+      .photo-modal__button--close:hover {
+        color: #5f236e; }
+
 .hero-section__container {
   margin-top: 8rem;
   position: relative;
@@ -906,6 +960,9 @@ tr:nth-child(even) {
   gap: 6rem;
   align-items: center; }
 
+.gallery-detail__list-item {
+  list-style: none; }
+
 .gallery-detail__image-container {
   display: flex;
   flex-wrap: wrap;
@@ -983,6 +1040,31 @@ tr:nth-child(even) {
       .propozice__html-content img {
         width: 90%; } }
 
+.edit-propozice__container {
+  margin-top: 6rem;
+  margin-bottom: 15rem;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 2.4rem;
+  font-weight: 500; }
+
+.edit-propozice__form {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; }
+
+.edit-propozice__form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; }
+  .edit-propozice__form-control label {
+    color: #5f236e; }
+
+.edit-propozice__form--button {
+  align-self: center; }
+
 /* Basic editor styles */
 .ProseMirror {
   padding: 1rem;
@@ -991,9 +1073,14 @@ tr:nth-child(even) {
   border: 2px solid #1b7a57;
   border-bottom-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
+  overflow: scroll;
+  height: 60vh;
   font-size: 1.6rem; }
   .ProseMirror > * + * {
     margin-top: 0.75em; }
+  .ProseMirror a {
+    cursor: pointer;
+    border-bottom: 2px solid #00974d; }
   .ProseMirror ul,
   .ProseMirror ol {
     padding: 0 2rem; }
@@ -1014,6 +1101,10 @@ tr:nth-child(even) {
     border: none;
     border-top: 2px solid rgba(27, 122, 87, 0.1);
     margin: 2rem 0; }
+
+.is-active img {
+  background-color: #a4cabc;
+  border-radius: 5px; }
 
 .editor-menu__container {
   position: relative;
