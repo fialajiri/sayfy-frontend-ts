@@ -37,6 +37,7 @@ const ModalFilePicker: React.FC<ModalFilePickerProps> = ({ isShow, hide, setFile
     setSelectedFile(file);
     setImagesValid(fileIsValid);
     setSelectedFileName(fileName);
+    
   };
 
   const modalContent = (
