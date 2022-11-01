@@ -14,7 +14,7 @@ const Aktuality: NextPage<AktualityProps> = ({ aktuality }) => {
   const { isAdmin } = useAuth();
 
   const aktualityElement = aktuality.map((aktualita) => (
-    <li>
+    <li key={aktualita.aktualitaUrl}>
       <Link href={`aktuality/${aktualita.aktualitaUrl}`}>
         <a aria-label="Login">
           <AktualitaCard detail={true} aktualita={aktualita} />

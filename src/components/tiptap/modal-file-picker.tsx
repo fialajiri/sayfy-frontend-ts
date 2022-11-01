@@ -31,7 +31,7 @@ const ModalFilePicker: React.FC<ModalFilePickerProps> = ({ isShow, hide, setFile
         replaceImageElementWithLink(localUrl, selectedFileName);
       }
     }
-  }, [selectedFile]);
+  }, [selectedFile, editor, selectedFileName, setFiles]);
 
   const onInputHandler = (file: File | undefined, fileIsValid: boolean, fileName: string) => {
     setSelectedFile(file);

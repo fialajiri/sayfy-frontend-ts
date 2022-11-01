@@ -58,8 +58,7 @@ const GalleryDetail: React.FC<GalleryDetailProps> = ({ title, images }) => {
             <li className="gallery-detail__list-item"
               id={index.toString()}
               onClick={(e) => showPhotoModalHandler(e, index)}
-              data-url={image}
-              data-id={index}
+             key={image}
             >
               <ImageCard imageUrl={image} key={image} alt={image} />
             </li>

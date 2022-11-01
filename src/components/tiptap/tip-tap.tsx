@@ -36,9 +36,20 @@ const Tiptap: React.FC<TiptapProps> = ({
 }) => {
   const [isSelectingFile, setIsSelectingFile] = useState(false);
 
+  const checkIfFileWasDeleted = useCallback(
+    (editorContent: string, files: FileData[]) => {
+      files.forEach((file) => {
+        if (!editorContent.includes(file.localUrl)) {
+          setSelectedFiles(selectedFiles.filter((item) => item.localUrl !== file.localUrl));
+        }
+      });
+    },
+    [selectedFiles, setSelectedFiles]
+  );
+
   useEffect(() => {
     checkIfFileWasDeleted(content, selectedFiles);
-  }, [content]);
+  }, [content, checkIfFileWasDeleted, selectedFiles]);
 
   const editor = useEditor({
     extensions: [
@@ -63,16 +74,7 @@ const Tiptap: React.FC<TiptapProps> = ({
     },
   });
 
-  const checkIfFileWasDeleted = useCallback(
-    (editorContent: string, files: FileData[]) => {
-      files.forEach((file) => {
-        if (!editorContent.includes(file.localUrl)) {
-          setSelectedFiles(selectedFiles.filter((item) => item.localUrl !== file.localUrl));
-        }
-      });
-    },
-    [selectedFiles]
-  );
+ 
 
   const showModalFilePicker = () => {
     setIsSelectingFile(true);

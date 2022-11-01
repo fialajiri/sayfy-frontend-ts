@@ -33,7 +33,7 @@ module.exports = (phase) => {
     },
 
     env: {
-      BACKEND_URL: "https://sayfy-memorial-backend.herokuapp.com/",
+      BACKEND_URL: "https://sayfy-memorial-backend.herokuapp.com",
       IMAGE_DOMAIN: "https://sayfyho-memorial.s3.eu-central-1.amazonaws.com",
     },
   };

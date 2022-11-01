@@ -16,24 +16,22 @@ const MenuCommandsMedia: React.FC<MenuCommandsMediaProps> = ({ editor, showFileP
     return null;
   }
 
-  const setLink = useCallback(() => {
+  const setLink = () => {
     const previousUrl = editor.getAttributes("link").href;
     const url = window.prompt("Vložte odkaz", previousUrl);
-   
-    
+
     if (url === null) {
       return;
     }
-    
+
     if (url === "") {
       editor.chain().focus().extendMarkRange("link").unsetLink().run();
       return;
     }
     editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
-    
-  }, [editor]);
+  };
 
-  const addYoutubeVideo = useCallback(() => {
+  const addYoutubeVideo = () => {
     const url = prompt("Vložte odkaz na Youtube");
     if (!url) {
       return;
@@ -43,7 +41,7 @@ const MenuCommandsMedia: React.FC<MenuCommandsMediaProps> = ({ editor, showFileP
       width: 480,
       height: 320,
     });
-  }, [editor]);
+  };
 
   return (
     <div className="editor-menu__commands editor-menu__commands--media">

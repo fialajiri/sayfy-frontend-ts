@@ -22,7 +22,7 @@ const EditAktualitaPage: NextPage = () => {
     };
 
     getAktualita(router.query.aktualitaId as string);
-  }, []);
+  }, [router.query.aktualitaId]);
 
   if (!isAdmin) {
     typeof window !== "undefined" && router.push("/login");

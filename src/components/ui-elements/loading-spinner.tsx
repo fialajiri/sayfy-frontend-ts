@@ -11,6 +11,7 @@ const LoadingSpinner: React.FC<ILoadingSpinnerProps> = (props) => {
       <Image
         className="loading-spinner__logo"
         src="/logos/sayfy-logo-png.webp"
+        alt="sayfy-logo"
         width={180}
         height={180}
       />

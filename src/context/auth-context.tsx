@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         setIsAdmin(user.isAdmin);
       }
     } catch (err: any) {
-      throw new HttpError(err.response?.data as ErrorData, err.response?.status);
+      throw new HttpError(err.message, err.response?.data as ErrorData, err.response?.status);
     }
   }, []);
 

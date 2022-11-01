@@ -10,19 +10,26 @@ export interface FloatingLabelInputProps {
   setValue: Dispatch<SetStateAction<string>>;
 }
 
-const FloatingLabelInput: React.FC<FloatingLabelInputProps> = (props) => {
+const FloatingLabelInput: React.FC<FloatingLabelInputProps> = ({
+  id,
+  type,
+  placeholder,
+  label,
+  value,
+  setValue,
+}) => {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   useEffect(() => {
-    if (props.value !== "") {
+    if (value !== "") {
       setIsActive(true);
     } else {
       setIsActive(false);
     }
-  }, []);
+  }, [value]);
 
   const handleTextChange = (inputValue: string) => {
-    props.setValue(inputValue);
+    setValue(inputValue);
 
     if (inputValue !== "") {
       setIsActive(true);
@@ -35,9 +42,9 @@ const FloatingLabelInput: React.FC<FloatingLabelInputProps> = (props) => {
     <div className="floating-label-input">
       <input
         className="floating-label-input__input"
-        type={props.type}
-        id={props.id}
-        value={props.value}
+        type={type}
+        id={id}
+        value={value}
         onChange={(e) => handleTextChange(e.target.value)}
       />
       <label
@@ -46,9 +53,9 @@ const FloatingLabelInput: React.FC<FloatingLabelInputProps> = (props) => {
             ? "floating-label-input__label floating-label-input__label--active"
             : "floating-label-input__label"
         }
-        htmlFor={props.id}
+        htmlFor={id}
       >
-        {props.label}
+        {label}
       </label>
     </div>
   );

@@ -27,6 +27,7 @@ const MenuButton: React.FC<MenuButtonProps> = ({
         width={EditorIconSize.WIDTH}
         height={EditorIconSize.HEIGHT}
         layout={"fixed"}
+        alt="editor button icon"
       />
       <p>{helpText}</p>
     </button>
