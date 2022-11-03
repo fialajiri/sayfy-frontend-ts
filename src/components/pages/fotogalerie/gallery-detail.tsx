@@ -52,7 +52,7 @@ const GalleryDetail: React.FC<GalleryDetailProps> = ({ title, images }) => {
         title={title}
       />
       <div className="gallery-detail__container">
-        <h2 className="heading-secondary"> {title} new</h2>
+        <h2 className="heading-secondary"> {title} newsf</h2>
         <ul className="gallery-detail__image-container">
           {images.map((image, index) => (
             <li
