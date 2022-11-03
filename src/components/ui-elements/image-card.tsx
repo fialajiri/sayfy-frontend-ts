@@ -32,9 +32,10 @@ const ImageCard: React.FC<ImageCardProps> = ({ imageUrl, title, alt }) => {
       {title && <p className="image-card__image-title">{title}</p>}
       <Image
         src={fallBackUrl}
-        width={400}
-        height={270}       
-        alt={alt}       
+        width={200}
+        height={140}       
+        alt={alt}
+        onError={() => setSrc(fallBackUrl)}
       />
     </div>
   );
