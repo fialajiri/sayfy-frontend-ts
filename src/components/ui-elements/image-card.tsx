@@ -31,11 +31,10 @@ const ImageCard: React.FC<ImageCardProps> = ({ imageUrl, title, alt }) => {
     <div className="image-card__container">
       {title && <p className="image-card__image-title">{title}</p>}
       <Image
-        src={imageFinalUrl}
-        layout="fill"
-        objectFit="cover"
-        alt={alt}
-        onError={() => setSrc(fallBackUrl)}
+        src={fallBackUrl}
+        width={400}
+        height={270}       
+        alt={alt}       
       />
     </div>
   );
