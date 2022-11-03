@@ -12,6 +12,8 @@ const GalleryDetail: React.FC<GalleryDetailProps> = ({ title, images }) => {
   const [modalImagePath, setModalImagePath] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const lessImages = images.slice(0, 50);
+
   const showPhotoModalHandler = (event: React.MouseEvent<HTMLLIElement>, index: number) => {
     event.preventDefault();
     setShowPhotoModal(true);
@@ -54,11 +56,12 @@ const GalleryDetail: React.FC<GalleryDetailProps> = ({ title, images }) => {
       <div className="gallery-detail__container">
         <h2 className="heading-secondary"> {title}</h2>
         <ul className="gallery-detail__image-container">
-          {images.map((image, index) => (
-            <li className="gallery-detail__list-item"
+          {lessImages.map((image, index) => (
+            <li
+              className="gallery-detail__list-item"
               id={index.toString()}
               onClick={(e) => showPhotoModalHandler(e, index)}
-             key={image}
+              key={image}
             >
               <ImageCard imageUrl={image} key={image} alt={image} />
             </li>
