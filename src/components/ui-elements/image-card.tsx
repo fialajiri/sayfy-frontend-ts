@@ -7,14 +7,18 @@ interface ImageCardProps {
 }
 
 const ImageCard: React.FC<ImageCardProps> = ({ imageUrl, title, alt }) => {
+  const cloudFormationUrl = `https://d3o6i10cj9gxf0.cloudfront.net`;
+  const filter = `fit-in/800x540`;
   const imagePath = imageUrl.includes("https")
-    ? imageUrl
-    : `${process.env.IMAGE_DOMAIN}/${imageUrl}`;
+    ? imageUrl.replace(process.env.IMAGE_DOMAIN as string, "")
+    : imageUrl;
+
+  const imageFinalUrl = `${cloudFormationUrl}/${filter}/${imagePath}`;
 
   return (
     <div className="image-card__container">
       {title && <p className="image-card__image-title">{title}</p>}
-      <Image src={imagePath} layout="fill" objectFit="cover" alt={alt} />
+      <Image src={imageFinalUrl} layout="fill" objectFit="cover" alt={alt} />
     </div>
   );
 };
