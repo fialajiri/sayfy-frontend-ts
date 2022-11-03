@@ -21,8 +21,7 @@ module.exports = (phase) => {
     return {
       images: {
         domains: [
-          "sayfyho-memorial.s3.eu-central-1.amazonaws.com",
-          ,
+          "sayfyho-memorial.s3.eu-central-1.amazonaws.com",         
           "d3o6i10cj9gxf0.cloudfront.net",
         ],
       },
@@ -37,7 +36,6 @@ module.exports = (phase) => {
     images: {
       domains: [
         "sayfyho-memorial.s3.eu-central-1.amazonaws.com",
-        ,
         "d3o6i10cj9gxf0.cloudfront.net",
       ],
     },
