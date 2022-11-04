@@ -23,12 +23,14 @@ const PhotoModal: React.FC<PhotoModalProps> = ({
 }) => {
   const header = `Živé Teplice ${title}`;
 
-  const imagePath = imageUrl.includes('https') ? imageUrl : `${process.env.IMAGE_DOMAIN}/${imageUrl}`
+  const imagePath = imageUrl.includes("https")
+    ? imageUrl
+    : `${process.env.IMAGE_DOMAIN}/${imageUrl}`;
 
   const modalContent = (
     <div className="photo-modal">
       <figure className="photo-modal__image--container">
-        <Image src={imagePath} alt="gallery photo" layout="fill" objectFit="cover" />
+        <Image src={imagePath} alt="gallery photo" layout="fill" objectFit="contain" />
 
         <div className="photo-modal__buttons">
           <button className="photo-modal__button photo-modal__button--left" onClick={previous}>
@@ -51,8 +53,6 @@ const PhotoModal: React.FC<PhotoModalProps> = ({
       {isShow && modalContent}
     </Fragment>
   );
-
-  return <Modal isShow={isShow} header={""} modalContent={modalContent} hide={hide} />;
 };
 
 export default PhotoModal;

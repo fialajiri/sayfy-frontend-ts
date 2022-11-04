@@ -13,8 +13,18 @@
   }
 
   &__galleries-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     flex-wrap: wrap;
     gap: 4rem;
+    justify-content: center;
+
+    @include respond(big-desktop) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include respond(tab-port) {
+     grid-template-columns: 1fr;
+    }
   }
 }

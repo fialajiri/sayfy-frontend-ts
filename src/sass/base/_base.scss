@@ -8,6 +8,11 @@
   box-sizing: inherit;
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $color-grey5 $color-grey1;
+}
+
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -31,9 +36,8 @@ body {
   line-height: $default-line-height;
   height: 50rem;
   font-weight: 400;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   font-family: $font-sans;
-
 }
 
 .page-container {
@@ -41,10 +45,9 @@ body {
   max-width: 140rem;
   display: flex;
   flex-direction: column;
-  position: relative;  
+  position: relative;
   min-height: 100vh;
-  padding:  0 3rem;
-
+  padding: 0 3rem;
 }
 
 ::selection {
@@ -53,7 +56,7 @@ body {
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
@@ -62,7 +65,7 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   border: $border-line;
-  -webkit-text-fill-color:$color-primary; 
-  -webkit-box-shadow: 0 0 0 1000px $color-background inset; 
+  -webkit-text-fill-color: $color-primary;
+  -webkit-box-shadow: 0 0 0 1000px $color-background inset;
   transition: background-color $color-background !important;
 }

@@ -6,8 +6,13 @@
   border: $border-line;
   border-bottom-left-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
-  overflow: scroll;
-  height: 60vh;
+  overflow-y: scroll;
+  height: 40vh;
+
+  @include respond(big-desktop) {
+    height: 60vh;
+  }
+ 
 
   font-size: 1.6rem;
 
@@ -48,6 +53,8 @@
     border-top: 2px solid rgba($color-primary, 0.1);
     margin: 2rem 0;
   }
+
+  
 }
 
 .is-active {

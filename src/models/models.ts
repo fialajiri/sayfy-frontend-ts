@@ -22,6 +22,7 @@ export interface GalleryDoc {
   id: string;
   title: string;
   images: string[];
+  createdAt:string;
 }
 
 export interface ErrorDoc {

@@ -92,7 +92,7 @@ const CreateNewAktualita: React.FC<CreateNewAktualitaProps> = ({ aktualita }) =>
                 onChange={(event) => setTitle(event.target.value)}
               />
             </div>
-            <div className="new-aktualita__form-control">
+            <div className="new-aktualita__form-control new-aktualita__form-control--perex">
               <label>Perex</label>
               <TiptapLite content={perex} setContent={setPerex} />
             </div>

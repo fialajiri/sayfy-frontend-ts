@@ -10,12 +10,22 @@
 
     &__list-item{
         list-style: none;
+        cursor: pointer;
     }
 
     &__image-container{
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         flex-wrap: wrap;
         gap: 4rem;
+
+        @include respond(big-desktop) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+          }
+      
+          @include respond(tab-port) {
+           grid-template-columns: 1fr;
+          }
         
 
     }
