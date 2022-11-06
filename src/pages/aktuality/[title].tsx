@@ -1,5 +1,7 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { Fragment } from "react";
 import AktualitaDetail from "../../components/aktuality/aktualita-detail";
+import AktualitaHead from "../../components/meta/aktualita-head";
 import { AktualitaDoc, IParams } from "../../models/models";
 import { getAktualita, getAktuality } from "../../utils/aktualita/get-aktualita";
 
@@ -8,7 +10,12 @@ interface AktualitaDetailPageProps {
 }
 
 const AktualitaDetailPage: NextPage<AktualitaDetailPageProps> = ({ aktualita }) => {
-  return <AktualitaDetail aktualita={aktualita} />;
+  return (
+    <Fragment>
+      <AktualitaHead aktualita={aktualita} />
+      <AktualitaDetail aktualita={aktualita} />
+    </Fragment>
+  );
 };
 
 export default AktualitaDetailPage;

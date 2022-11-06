@@ -1,14 +1,25 @@
 import type { GetStaticProps, NextPage } from "next";
 import HomePage from "../components/pages/homepage/homepage";
+import SimpleHead from "../components/meta/simple-head";
 import { AktualitaDoc } from "../models/models";
 import { getAktuality } from "../utils/aktualita/get-aktualita";
+import { Fragment } from "react";
 
 interface HomeProps {
   aktuality: AktualitaDoc[];
 }
 
 const Home: NextPage<HomeProps> = ({ aktuality }) => {
-  return <HomePage aktuality={aktuality} />;
+  return (
+    <Fragment>
+      <SimpleHead
+        title="Sayfyho Memorial"
+        description="Hlavní stránka cyklistického závodu Sayfyho Memorial"
+        url="/"
+      />
+      <HomePage aktuality={aktuality} />
+    </Fragment>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -23,5 +34,3 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 export default Home;
-
-

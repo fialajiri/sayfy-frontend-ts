@@ -7,19 +7,19 @@ class MyDocument extends Document {
         <Head>
           <meta property="og:type" content="website" />
           <meta property="og:locale" content="cs_CZ" />
-          {/* <meta
+          <meta
             property="og:image"
             content={`${process.env.HOST_URL}/images/og-image.jpg`}
           />
           <meta
             name="keywords"
-            content="Volba pro Teplice, Teplice, politika, politická strana, volby 2022, program, městská zeleň, bydlení Teplice, parkování Teplice, koupaliště Teplice, kultura Teplice, zastupitelstvo Teplice, pořádek Teplice, územní plán Teplice, dětská hřiště Teplice, kumunální politika, komunita Teplice, Piráti Teplice, Zelenní Teplice, Lidovci Teplice, Nezávislí Teplice, koalice Teplice"
+            content="Sayfyho Memorial, cyklistický závod, Sayfy, Teplice, Město Hrob, kola, cyklistika, závody"
           />
           <meta
             name="description"
-            content="Domovská stránka teplické politické strany - Volba pro Teplice"
+            content="Domovská stránka cyklistického závodu Sayfyho Memorial"
           />
-          <script
+          {/* <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
           />

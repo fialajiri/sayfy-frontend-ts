@@ -1,6 +1,8 @@
 import { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
+import { Fragment } from "react";
 import AktualitaCard from "../../components/aktuality/aktualita-card";
+import SimpleHead from "../../components/meta/simple-head";
 import Button from "../../components/ui-elements/button";
 import { useAuth } from "../../context/auth-context";
 import { AktualitaDoc } from "../../models/models";
@@ -24,12 +26,19 @@ const Aktuality: NextPage<AktualityProps> = ({ aktuality }) => {
   ));
 
   return (
-    <div className="aktuality__container">
-      <h2>Aktuality</h2>
-      {isAdmin && <Button link="aktuality/new">Nová Aktualita</Button>}
+    <Fragment>
+      <SimpleHead
+        title="Aktuality"
+        description="aktuality a novinky k cyklistickému závodu Sayfyho Memorial"
+        url="/aktuality"
+      />
+      <div className="aktuality__container">
+        <h2>Aktuality</h2>
+        {isAdmin && <Button link="aktuality/new">Nová Aktualita</Button>}
 
-      <ul className="aktuality__list">{aktualityElement}</ul>
-    </div>
+        <ul className="aktuality__list">{aktualityElement}</ul>
+      </div>
+    </Fragment>
   );
 };
 

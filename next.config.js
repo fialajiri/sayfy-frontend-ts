@@ -13,6 +13,7 @@ module.exports = (phase) => {
       env: {
         BACKEND_URL: "http://localhost:5000",
         IMAGE_DOMAIN: "https://sayfyho-memorial.s3.eu-central-1.amazonaws.com",
+        HOST_URL: "",
       },
     };
   }
@@ -21,28 +22,27 @@ module.exports = (phase) => {
     return {
       images: {
         domains: [
-          "sayfyho-memorial.s3.eu-central-1.amazonaws.com",         
+          "sayfyho-memorial.s3.eu-central-1.amazonaws.com",
           "d3o6i10cj9gxf0.cloudfront.net",
         ],
       },
       env: {
         BACKEND_URL: "http://localhost:5000",
         IMAGE_DOMAIN: "https://sayfyho-memorial.s3.eu-central-1.amazonaws.com",
+        HOST_URL: "",
       },
     };
   }
 
   return {
     images: {
-      domains: [
-        "sayfyho-memorial.s3.eu-central-1.amazonaws.com",
-        "d3o6i10cj9gxf0.cloudfront.net",
-      ],
+      domains: ["sayfyho-memorial.s3.eu-central-1.amazonaws.com", "d3o6i10cj9gxf0.cloudfront.net"],
     },
 
     env: {
       BACKEND_URL: "https://sayfy-memorial-backend.herokuapp.com",
       IMAGE_DOMAIN: "https://sayfyho-memorial.s3.eu-central-1.amazonaws.com",
+      HOST_URL: "",
     },
   };
 };
