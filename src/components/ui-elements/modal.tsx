@@ -8,11 +8,12 @@ import Backdrop from "./backdrop";
 export interface IModalOverlayProps {
   header: string;
   modalContent: JSX.Element;
+  hideBottomButton?:boolean
   bottomButtonText?:string
   hide: () => void;
 }
 
-const ModalOverlay: React.FC<IModalOverlayProps> = ({ header, modalContent, hide, bottomButtonText }) => {
+const ModalOverlay: React.FC<IModalOverlayProps> = ({ header, modalContent, hide, bottomButtonText, hideBottomButton }) => {
   const content = (
     <div className="modal">
       <header className="modal__header">
@@ -20,7 +21,7 @@ const ModalOverlay: React.FC<IModalOverlayProps> = ({ header, modalContent, hide
       </header>
       <div className="modal__content">
         {modalContent}
-        <Button onClick={hide}>{bottomButtonText? bottomButtonText : 'Ok'}</Button>
+       {hideBottomButton && <Button onClick={hide}>{bottomButtonText? bottomButtonText : 'Ok'}</Button>}
       </div>
     </div>
   );

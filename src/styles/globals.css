@@ -1235,10 +1235,13 @@ tr:nth-child(even) {
   flex-direction: column;
   gap: 2rem; }
 
+.aktualita-card-detail__heading {
+  cursor: pointer; }
+
 .aktualita-card-detail__image {
   display: flex;
   position: relative;
-  width: 100%;
+  flex-shrink: 0;
   height: 40rem;
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;
@@ -1264,6 +1267,15 @@ tr:nth-child(even) {
 .aktualita-card-detail__perex {
   font-size: 2rem;
   color: #0e3d2c; }
+
+.aktualita-card-detail__buttons {
+  margin-top: 8rem;
+  display: flex;
+  justify-content: space-between; }
+
+.aktualita-card-detail__modal-buttons {
+  display: flex;
+  gap: 30rem; }
 
 .new-aktualita__container {
   margin-top: 6rem;

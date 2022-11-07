@@ -22,7 +22,7 @@ const CreateNewAktualita: React.FC<CreateNewAktualitaProps> = ({ aktualita }) =>
   const [text, setText] = useState(aktualita?.text || "");
   const [mainPhoto, setMainPhoto] = useState<File[]>([]);
   const [photoGallery, setPhotoGallery] = useState<File[]>([]);
-  const [imageIsValid, setImageIsValid] = useState(false);
+  const [imageIsValid, setImageIsValid] = useState(aktualita ? true : false);
   const [filesFromEditor, setFilesFromEditor] = useState<FileData[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<HttpError | null>(null);
@@ -35,10 +35,12 @@ const CreateNewAktualita: React.FC<CreateNewAktualitaProps> = ({ aktualita }) =>
     setIsLoading(true);
 
     if (!areInputsValid()) {
+      setIsLoading(true);
       return;
     }
 
     const aktualitaData: aktualitaData = {
+      id: aktualita?.id,
       title,
       perex,
       text,
@@ -47,6 +49,8 @@ const CreateNewAktualita: React.FC<CreateNewAktualitaProps> = ({ aktualita }) =>
       filesFromEditor,
     };
 
+    
+
     try {
       await saveAktualita(aktualitaData);
     } catch (err: any) {
@@ -54,6 +58,8 @@ const CreateNewAktualita: React.FC<CreateNewAktualitaProps> = ({ aktualita }) =>
     } finally {
       setIsLoading(false);
     }
+
+    router.push("/aktuality");
   };
 
   const areInputsValid = () => {

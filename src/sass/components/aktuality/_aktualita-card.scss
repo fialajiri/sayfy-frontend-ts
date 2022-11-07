@@ -42,7 +42,6 @@
     box-shadow: $shadow-dark;
 
     @include respond(tab-land) {
-     
     }
 
     @include respond(tab-port) {
@@ -59,10 +58,15 @@
     gap: 2rem;
   }
 
+  &__heading {
+    cursor: pointer;
+  }
+
   &__image {
     display: flex;
     position: relative;
-    width: 100%;
+    flex-shrink: 0;   
+    
     height: 40rem;
     border-top-right-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
@@ -78,7 +82,7 @@
       height: 45rem;
     }
 
-    @include respond(phone){
+    @include respond(phone) {
       height: 35rem;
     }
   }
@@ -93,5 +97,16 @@
   &__perex {
     font-size: 2rem;
     color: $color-primary-dark3;
+  }
+
+  &__buttons {
+    margin-top: 8rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__modal-buttons{
+    display: flex;
+    gap: 30rem;
   }
 }

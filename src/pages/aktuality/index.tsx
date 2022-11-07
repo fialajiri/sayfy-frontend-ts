@@ -1,6 +1,6 @@
 import { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import AktualitaCard from "../../components/aktuality/aktualita-card";
 import SimpleHead from "../../components/meta/simple-head";
 import Button from "../../components/ui-elements/button";
@@ -12,16 +12,19 @@ interface AktualityProps {
   aktuality: AktualitaDoc[];
 }
 
-const Aktuality: NextPage<AktualityProps> = ({ aktuality }) => {
+const Aktuality: NextPage<AktualityProps> = (props) => {
+  const [aktuality, setAktuality] = useState(props.aktuality);
   const { isAdmin } = useAuth();
+
+  const removeAktualita = (id: string): void => {
+    setAktuality(aktuality.filter((aktualita) => aktualita.id !== id));
+  };
 
   const aktualityElement = aktuality.map((aktualita) => (
     <li key={aktualita.aktualitaUrl}>
-      <Link href={`aktuality/${aktualita.aktualitaUrl}`}>
-        <a aria-label="Login">
-          <AktualitaCard detail={true} aktualita={aktualita} />
-        </a>
-      </Link>
+      <a aria-label="Login">
+        <AktualitaCard detail={true} aktualita={aktualita} removeAktualita={removeAktualita} />
+      </a>
     </li>
   ));
 

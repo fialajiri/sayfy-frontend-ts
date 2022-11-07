@@ -29,6 +29,8 @@ export const saveAktualita = async (aktualitaData: aktualitaData): Promise<void>
   const photoGalleryUrls = await processFiles(photoGallery, `aktuality/${title}`);
   const mainPhotoUrl = await uploadFileToS3(mainPhoto[0], `aktuality/${title}`);
 
+  
+
   const body = {
     title,
     perex,
