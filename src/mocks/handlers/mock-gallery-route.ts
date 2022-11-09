@@ -9,8 +9,15 @@ const galleries: GalleryDoc[] = [
     images: ["imagePath1", "imagePath2"],
     title: "2022",
     createdAt: "2022-10-10",
+    galleryUrl: "url",
   },
-  { id: "2", images: ["imagePath3", "imagePath4"], title: "2021", createdAt: "2022-10-10" },
+  {
+    id: "2",
+    images: ["imagePath3", "imagePath4"],
+    title: "2021",
+    createdAt: "2022-10-10",
+    galleryUrl: "url2",
+  },
 ];
 
 export const galleryRoutesHandlers = [

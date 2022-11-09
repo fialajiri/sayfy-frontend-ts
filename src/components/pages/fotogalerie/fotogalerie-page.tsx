@@ -21,7 +21,7 @@ const FotoGaleriePage: React.FC<FotoGaleriePageProps> = ({ galleries }) => {
         {galleries.map((gallery) => (
           <li
             className="fotogalerie-page__image-item"
-            onClick={(e) => imageOnClickHandler(e, gallery.title)}
+            onClick={(e) => imageOnClickHandler(e, gallery.galleryUrl)}
             key={gallery.id}
           >
             <ImageCard

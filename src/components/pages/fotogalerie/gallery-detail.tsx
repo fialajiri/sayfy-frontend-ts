@@ -1,8 +1,11 @@
 import PhotoModal from "../../ui-elements/photo-modal";
 import ImageCard from "../../ui-elements/image-card";
 import { Fragment, useState } from "react";
+import { useAuth } from "../../../context/auth-context";
+import { useRouter } from "next/router";
+import Button from "../../ui-elements/button";
 
-interface GalleryDetailProps {
+interface GalleryDetailProps { 
   title: string;
   images: string[];
 }
@@ -11,6 +14,8 @@ const GalleryDetail: React.FC<GalleryDetailProps> = ({ title, images }) => {
   const [showPhotoModal, setShowPhotoModal] = useState(false);
   const [modalImagePath, setModalImagePath] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { isAdmin } = useAuth();
+  const router = useRouter()
 
   const showPhotoModalHandler = (event: React.MouseEvent<HTMLLIElement>, index: number) => {
     event.preventDefault();
@@ -53,6 +58,7 @@ const GalleryDetail: React.FC<GalleryDetailProps> = ({ title, images }) => {
       />
       <div className="gallery-detail__container">
         <h2 className="heading-secondary"> {title} </h2>
+        {isAdmin && <Button onClick={() => router.push(`/fotogalerie/edit/${title}`)}>Editovat</Button>}
         <ul className="gallery-detail__image-container">
           {images.map((image, index) => (
             <li

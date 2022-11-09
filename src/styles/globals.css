@@ -1011,6 +1011,41 @@ tr:nth-child(even) {
     .gallery-detail__image-container {
       grid-template-columns: 1fr; } }
 
+.edit-gallery__container {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; }
+
+.edit-gallery__form {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; }
+  .edit-gallery__form--button-container {
+    align-self: center; }
+
+.edit-gallery__image-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center; }
+  .edit-gallery__image-list--item {
+    position: relative; }
+  .edit-gallery__image-list--icon {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: black;
+    cursor: pointer;
+    transition: all 300ms; }
+    .edit-gallery__image-list--icon:hover {
+      color: #5f236e;
+      transform: translate(-50%, -50%) scale(1.2); }
+
 .vysledky__container {
   margin-top: 4rem;
   display: flex;

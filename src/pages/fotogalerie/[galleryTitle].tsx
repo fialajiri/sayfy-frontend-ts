@@ -43,7 +43,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const galleries = await getGalleries();
-  const pathWithParams = galleries.map((gallery) => ({ params: { galleryTitle: gallery.title } }));
+  const pathWithParams = galleries.map((gallery) => ({
+    params: { galleryTitle: gallery.galleryUrl },
+  }));
 
   return {
     paths: pathWithParams,

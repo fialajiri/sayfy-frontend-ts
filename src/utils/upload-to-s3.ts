@@ -10,7 +10,7 @@ export const processFiles = async (files: File[], folderName: string) => {
   const fileKeys: string[] = [];
 
   for (const file of files) {
-    const fileKey = await uploadFileToS3(file, folderName);
+    const fileKey = await uploadFileToS3(file, folderName);   
     fileKeys.push(fileKey);
   }
 

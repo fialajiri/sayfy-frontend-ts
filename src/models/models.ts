@@ -21,6 +21,7 @@ export interface AktualitaDoc {
 export interface GalleryDoc {
   id: string;
   title: string;
+  galleryUrl:string;
   images: string[];
   createdAt:string;
 }
