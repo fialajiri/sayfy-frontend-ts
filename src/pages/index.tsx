@@ -23,7 +23,9 @@ const Home: NextPage<HomeProps> = ({ aktuality }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const aktuality = await getAktuality();
+  let aktuality = await getAktuality();
+  aktuality.sort((a, b) => new Date(b.createdAt).valueOf() - new Date(a.createdAt).valueOf());
+  aktuality = aktuality.slice(0, 5);
 
   return {
     props: {

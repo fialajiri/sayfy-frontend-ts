@@ -26,7 +26,7 @@ const ModalFilePicker: React.FC<ModalFilePickerProps> = ({ isShow, hide, setFile
     if (selectedFile) {
       const localUrl = URL.createObjectURL(selectedFile);
       setFiles((current) => [...current, { file: selectedFile, localUrl: localUrl }]);
-      editor?.chain().focus().setImage({ src: localUrl }).run();
+      editor?.chain().focus().setImage({ src: localUrl, alt:"an image from editor" }).run();
       if (ALLOWED_DOCUMENTS_FILES.includes(selectedFile.type)) {
         replaceImageElementWithLink(localUrl, selectedFileName);
       }

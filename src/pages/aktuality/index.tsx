@@ -1,5 +1,4 @@
 import { GetStaticProps, NextPage } from "next";
-import Link from "next/link";
 import { Fragment, useState } from "react";
 import AktualitaCard from "../../components/aktuality/aktualita-card";
 import SimpleHead from "../../components/meta/simple-head";
@@ -22,9 +21,7 @@ const Aktuality: NextPage<AktualityProps> = (props) => {
 
   const aktualityElement = aktuality.map((aktualita) => (
     <li key={aktualita.aktualitaUrl}>
-      <a aria-label="Login">
-        <AktualitaCard detail={true} aktualita={aktualita} removeAktualita={removeAktualita} />
-      </a>
+      <AktualitaCard detail={true} aktualita={aktualita} removeAktualita={removeAktualita} />
     </li>
   ));
 
@@ -49,6 +46,7 @@ export default Aktuality;
 
 export const getStaticProps: GetStaticProps = async () => {
   const aktuality = await getAktuality();
+  aktuality.sort((a, b) => new Date(b.createdAt).valueOf() - new Date(a.createdAt).valueOf());
 
   return {
     props: {
