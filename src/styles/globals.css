@@ -1261,8 +1261,14 @@ tr:nth-child(even) {
   @media only screen and (max-width: 56.25em) {
     .aktualita-card-detail__container {
       flex-direction: column;
-      max-width: 70rem;
+      max-width: 60rem;
       gap: 4rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .aktualita-card-detail__container {
+      max-width: 45rem; } }
+  @media only screen and (max-width: 22.5em) {
+    .aktualita-card-detail__container {
+      max-width: 35rem; } }
 
 .aktualita-card-detail__text-container {
   padding: 2rem;
@@ -1277,21 +1283,27 @@ tr:nth-child(even) {
   display: flex;
   position: relative;
   flex-shrink: 0;
-  height: 40rem;
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;
   overflow: hidden; }
   @media only screen and (max-width: 75em) {
     .aktualita-card-detail__image {
+      width: 47rem;
       height: 35rem; } }
   @media only screen and (max-width: 56.25em) {
     .aktualita-card-detail__image {
       border-top-right-radius: 0%;
       border-bottom-left-radius: 2rem;
+      width: 60rem;
       height: 45rem; } }
   @media only screen and (max-width: 37.5em) {
     .aktualita-card-detail__image {
-      height: 35rem; } }
+      width: 45rem;
+      height: 34rem; } }
+  @media only screen and (max-width: 22.5em) {
+    .aktualita-card-detail__image {
+      width: 35rem;
+      height: 26rem; } }
 
 .aktualita-card-detail__datum {
   font-size: 1.8rem;
@@ -1300,7 +1312,7 @@ tr:nth-child(even) {
   color: #5f236e; }
 
 .aktualita-card-detail__perex {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #0e3d2c; }
 
 .aktualita-card-detail__buttons {
@@ -1384,8 +1396,8 @@ tr:nth-child(even) {
 .aktualita-detail__main-image {
   margin: 2rem;
   position: relative;
-  width: 55rem;
-  height: 41rem;
+  width: 60rem;
+  height: 45rem;
   border-radius: 2rem;
   display: flex;
   overflow: hidden; }
