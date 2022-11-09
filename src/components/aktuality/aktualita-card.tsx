@@ -85,7 +85,7 @@ const AktualitaCard: React.FC<AktualitaCardProps> = ({ aktualita, detail, remove
               src={aktualita.mainPhoto}
               alt={aktualita.title}
               width={600}
-              height={400}
+              height={451}
               objectFit="cover"
             />
           </figure>

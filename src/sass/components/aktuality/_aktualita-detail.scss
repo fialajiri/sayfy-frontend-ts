@@ -39,20 +39,20 @@
   &__main-image {
     margin: 2rem;
     position: relative;
-    width: 60rem;
-    height: 40rem;
+    width: 55rem;
+    height: 41rem;
     border-radius: $border-radius;
     display: flex;
     overflow: hidden;
 
     @include respond(tab-land) {
      width: 50rem;
-     height: 34rem;
+     height: 38rem;
     }
 
     @include respond(phone) {
       width: 30rem;
-     height: 20rem;
+     height: 23rem;
      }
   }
 
