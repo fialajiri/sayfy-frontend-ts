@@ -15,6 +15,8 @@ Webová aplikace umožnující pořadatelům cyklistického závodu Sayfyho memo
    
   - Styling je napsaný v CSS za použití CSS modulů. Stránka je plně responsivní  
   
+  - Backend je napsaný v typescriptu s použitím NodeJs
+    - kód je k prohlédnutí [zde](https://github.com/fialajiri/sayfy-backend-ts)
   
 ## EN  
 
@@ -31,3 +33,7 @@ A web application enabling the organizers of the Sayfy memorial cycling race to 
   - App state management is done with React Context. 
    
   - Styling is written in CSS using CSS modules. The page is fully responsive   
+  
+  - Backend is written in typescript using Express framework under Node.js
+    - code is available [here](https://github.com/fialajiri/sayfy-backend-ts)
+
