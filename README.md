@@ -22,7 +22,7 @@ Webová aplikace umožnující pořadatelům cyklistického závodu Sayfyho memo
 A web application enabling the organizers of the Sayfy memorial cycling race to promote the race, and upload news and photos.
      
     
-### Technologie
+### Tech Stack
  
   - Frontend is written in typescriptu with library React a Next.js framework. 
     - react: 18.0.19
