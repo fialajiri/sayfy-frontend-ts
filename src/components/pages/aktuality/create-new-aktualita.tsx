@@ -17,8 +17,7 @@ interface CreateNewAktualitaProps {
 }
 
 const CreateNewAktualita: React.FC<CreateNewAktualitaProps> = ({ aktualita }) => {
-  const [title, setTitle] = useState(aktualita?.title || "");
-  const [perex, setPerex] = useState(aktualita?.perex || "");
+  const [title, setTitle] = useState(aktualita?.title || "");  
   const [text, setText] = useState(aktualita?.text || "");
   const [mainPhoto, setMainPhoto] = useState<File[]>([]);
   const [photoGallery, setPhotoGallery] = useState<File[]>([]);
@@ -41,8 +40,7 @@ const CreateNewAktualita: React.FC<CreateNewAktualitaProps> = ({ aktualita }) =>
 
     const aktualitaData: aktualitaData = {
       id: aktualita?.id,
-      title,
-      perex,
+      title,     
       text,
       mainPhoto,
       photoGallery,
@@ -65,9 +63,7 @@ const CreateNewAktualita: React.FC<CreateNewAktualitaProps> = ({ aktualita }) =>
   const areInputsValid = () => {
     return (
       minLenght(title) &&
-      maxLength(title, 150) &&
-      minLenght(perex) &&
-      maxLength(perex, 500) &&
+      maxLength(title, 150) &&    
       imageIsValid
     );
   };
@@ -98,10 +94,7 @@ const CreateNewAktualita: React.FC<CreateNewAktualitaProps> = ({ aktualita }) =>
                 onChange={(event) => setTitle(event.target.value)}
               />
             </div>
-            <div className="new-aktualita__form-control new-aktualita__form-control--perex">
-              <label>Perex</label>
-              <TiptapLite content={perex} setContent={setPerex} />
-            </div>
+            
             <div className="new-aktualita__form-control">
               <label>Zpráva</label>
               <Tiptap

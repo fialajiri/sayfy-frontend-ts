@@ -65,10 +65,7 @@ const AktualitaCard: React.FC<AktualitaCardProps> = ({ aktualita, detail, remove
             <div className="aktualita-card-detail__datum">
               {new Date(aktualita.createdAt).toLocaleDateString("cs-CZ")}
             </div>
-            <div
-              className="aktualita-card-detail__perex"
-              dangerouslySetInnerHTML={{ __html: aktualita.perex }}
-            ></div>
+
             {isAdmin && (
               <div className="aktualita-card-detail__buttons">
                 <Button size="small" link={`aktuality/edit/${aktualita.id}`}>

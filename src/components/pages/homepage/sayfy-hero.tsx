@@ -5,7 +5,10 @@ const SayfyHero: React.FC = () => {
   return (
     <section className="hero-section__container">
       <div className="hero-section__wrapper">
-        <h1 className="heading-primary hero-section__heading">Cyklistický závod Sayfyho Memorial</h1>
+        <div className="hero-section__heading-wrapper">
+          <h1 className="heading-primary hero-section__heading"> Sayfyho Memorial</h1>
+          <h1 className="heading-primary here-section__heading-two">Cyklistický závod</h1>
+        </div>
         {/* <div className="hero-section__image-box--bike">
           <Image src={BikeLogo} alt="Bike Image" layout="fill" objectFit="contain" />
         </div> */}

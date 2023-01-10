@@ -1,18 +1,36 @@
 .hero-section {
   &__container {
-    margin-top: 8rem;
+    margin-top: 6rem;
     position: relative;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 
-    
     @include respond(tab-port) {
       flex-direction: column;
       gap: 4rem;
     }
+  }
 
+  &__heading-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  &__heading {
+    font-size: 10rem;
+    text-align: center;
+
+    @include respond(phone) {
+     font-size: 8rem;
+    }
+
+    @include respond(big-desktop) {
+      font-size: 10rem;
+    }
   }
 
   &__wrapper {
@@ -31,8 +49,7 @@
 
       @include respond(phone-small) {
         width: 35rem;
-       }
-
+      }
     }
     &--bike {
       position: relative;

@@ -8,7 +8,6 @@ import { processFiles, uploadFileToS3 } from "../upload-to-s3";
 export interface aktualitaData {
   id?: string;
   title: string;
-  perex: string;
   text: string;
   mainPhoto: File[];
   photoGallery: File[];
@@ -16,7 +15,7 @@ export interface aktualitaData {
 }
 
 export const saveAktualita = async (aktualitaData: aktualitaData): Promise<void> => {
-  const { id, title, perex, text, mainPhoto, photoGallery, filesFromEditor } = aktualitaData;
+  const { id, title, text, mainPhoto, photoGallery, filesFromEditor } = aktualitaData;
   const editorFilesUrls: string[] = [];
   let textWithReplacedFileUrls = text;
 
@@ -29,11 +28,8 @@ export const saveAktualita = async (aktualitaData: aktualitaData): Promise<void>
   const photoGalleryUrls = await processFiles(photoGallery, `aktuality/${title}`);
   const mainPhotoUrl = await uploadFileToS3(mainPhoto[0], `aktuality/${title}`);
 
-  
-
   const body = {
     title,
-    perex,
     text: textWithReplacedFileUrls,
     mainPhoto: mainPhotoUrl,
     photoGallery: photoGalleryUrls,
