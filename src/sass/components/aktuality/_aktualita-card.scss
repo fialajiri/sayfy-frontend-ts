@@ -38,13 +38,15 @@
 .aktualita-card-detail {
   &__container {
     display: flex;
+    width: 60rem;
+    flex-direction: column;
     border-radius: $border-radius;
     box-shadow: $shadow-dark;
 
-    @include respond(tab-port) {
-      flex-direction: column;
-      max-width: 60rem;
-      gap: 4rem;
+    @include respond(big-desktop) {
+      
+      max-width: 50rem;
+      
     }
 
     @include respond(phone) {
@@ -59,8 +61,7 @@
     padding: 2rem;
     display: flex;
     flex-direction: column;
-
-    gap: 2rem;
+    gap: 1rem;
   }
 
   &__heading {
@@ -72,18 +73,13 @@
     position: relative;
     flex-shrink: 0;
 
-    border-top-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
     overflow: hidden;
 
-    @include respond(tab-land) {
-      width: 47rem;
-      height: 35rem;
-    }
+    
 
-    @include respond(tab-port) {
-      border-top-right-radius: 0%;
-      border-bottom-left-radius: $border-radius;
+    @include respond(tab-port) {     
       width: 60rem;
       height: 45rem;
     }
@@ -112,7 +108,7 @@
   }
 
   &__buttons {
-    margin-top: 8rem;
+    margin-top: 2rem;    
     display: flex;
     justify-content: space-between;
   }

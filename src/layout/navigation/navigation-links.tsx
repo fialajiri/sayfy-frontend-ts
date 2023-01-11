@@ -30,6 +30,9 @@ const NavigationLinks: React.FC = () => {
       <li className={getClass("/fotogalerie")}>
         <Link href="/fotogalerie">Fotogalerie</Link>
       </li>
+      <li className={getClass("/kontakt")}>
+        <Link href="/kontakt">Kontakt</Link>
+      </li>
       <li className="nav__list__item">
         <a href="#" target="_blank" aria-label="Facebook">
           <FacebookLogo className="nav__list__icon" weight="bold" />
