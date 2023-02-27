@@ -8,6 +8,9 @@ interface AktualitaDetailProps {
 
 const AktualitaDetail: React.FC<AktualitaDetailProps> = ({ aktualita }) => {
   const { title, createdAt, mainPhoto, perex, text, photoGallery } = aktualita;
+
+  console.log(photoGallery.length)
+
   return (
     <div className="aktualita-detail__container">
       <h2>{title}</h2>
@@ -20,8 +23,8 @@ const AktualitaDetail: React.FC<AktualitaDetailProps> = ({ aktualita }) => {
       </figure>
 
       <div className="aktualita-detail__text" dangerouslySetInnerHTML={{ __html: text }}></div>
-      {photoGallery.length && <h3>Fotogalerie</h3>}
-      {photoGallery.length && (
+      {photoGallery.length > 0 && <h3>Fotogalerie</h3>}
+      {photoGallery.length > 0 && (
         <div className="aktualita-detail__gallery">
           {photoGallery.map((image) => (
             <ImageCard imageUrl={image} key={image} alt={image}  />
