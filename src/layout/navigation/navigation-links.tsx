@@ -34,12 +34,12 @@ const NavigationLinks: React.FC = () => {
         <Link href="/kontakt">Kontakt</Link>
       </li>
       <li className="nav__list__item">
-        <a href="https://www.facebook.com/sayfyhomemorial" target="_blank" aria-label="Facebook">
+        <a href="https://www.facebook.com/sayfyhomemorial" target="_blank" rel="noreferrer" aria-label="Facebook">
           <FacebookLogo className="nav__list__icon" weight="bold" />
         </a>
       </li>
       <li className="nav__list__item">
-        <a href="https://www.instagram.com/sayfyhomemorial/" target="_blank" aria-label="Facebook">
+        <a href="https://www.instagram.com/sayfyhomemorial/" target="_blank" rel="noreferrer" aria-label="Facebook">
           <InstagramLogo className="nav__list__icon" weight="bold" />
         </a>
       </li>
