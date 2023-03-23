@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FacebookLogo, User, TwitterLogo } from "phosphor-react";
+import { FacebookLogo, User, InstagramLogo } from "phosphor-react";
 
 const NavigationLinks: React.FC = () => {
   const router = useRouter();
@@ -40,7 +40,7 @@ const NavigationLinks: React.FC = () => {
       </li>
       <li className="nav__list__item">
         <a href="https://www.instagram.com/sayfyhomemorial/" target="_blank" aria-label="Facebook">
-          <TwitterLogo className="nav__list__icon" weight="bold" />
+          <InstagramLogo className="nav__list__icon" weight="bold" />
         </a>
       </li>
       <li className="nav__list__item">
