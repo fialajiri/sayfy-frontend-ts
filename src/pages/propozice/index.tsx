@@ -5,6 +5,8 @@ import SimpleHead from "../../components/meta/simple-head";
 import { PropoziceDoc } from "../../models/models";
 import { getPropozice } from "../../utils/propozice/get-propozice";
 import { Fragment } from "react";
+import RegisterButton from "../../components/ui-elements/register-button";
+
 
 interface PropozicePageProps {
   propozice: PropoziceDoc;
@@ -21,6 +23,7 @@ const PropozicePage: NextPage<PropozicePageProps> = ({ propozice }) => {
         url="/propozice"
       />
       <div className="propozice__container page-container">
+        <RegisterButton />
         {isAdmin && <Button link="propozice/edit">Editovat</Button>}
         <h2>{title}</h2>
         <div className="propozice__html-content" dangerouslySetInnerHTML={{ __html: text }}></div>

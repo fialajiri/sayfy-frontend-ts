@@ -23,7 +23,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 
   if (props.link) {
     return (
-      <Link href={props.link}>
+      <Link href={props.link} >
         <a className={classes}>{props.children}</a>
       </Link>
     );

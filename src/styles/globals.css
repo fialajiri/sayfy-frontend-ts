@@ -722,6 +722,15 @@ tr:nth-child(even) {
       .photo-modal__button--close:hover {
         color: #5f236e; }
 
+.register-button {
+  text-align: center; }
+  .register-button__anchor {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: #0eb14b; }
+
 .hero-section__container {
   margin-top: 6rem;
   position: relative;
