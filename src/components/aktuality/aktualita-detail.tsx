@@ -19,7 +19,7 @@ const AktualitaDetail: React.FC<AktualitaDetailProps> = ({ aktualita }) => {
       </time>
       <div className="aktualita-detail__perex" dangerouslySetInnerHTML={{ __html: perex }}></div>
       <figure className="aktualita-detail__main-image">
-        <Image src={mainPhoto} alt={title} layout="fill" />
+        <Image src={mainPhoto} alt={title} layout="fill" objectFit="contain"  />
       </figure>
 
       <div className="aktualita-detail__text" dangerouslySetInnerHTML={{ __html: text }}></div>

@@ -31,7 +31,7 @@
     width: 100%;
     height: 30rem;
     border-radius: $border-radius;
-    overflow: hidden;
+    overflow: hidden;    
   }
 }
 
@@ -43,8 +43,7 @@
     border-radius: $border-radius;
     box-shadow: $shadow-dark;
 
-    @include respond(big-desktop) {
-      
+    @include respond(big-desktop) {      
       max-width: 50rem;
       
     }
@@ -76,6 +75,7 @@
     border-bottom-left-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
     overflow: hidden;
+    padding: 2rem;
 
     
 
