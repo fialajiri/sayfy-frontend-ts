@@ -33,6 +33,9 @@ const NavigationLinks: React.FC = () => {
       <li className={getClass("/kontakt")}>
         <Link href="/kontakt">Kontakt</Link>
       </li>
+      <li className={getClass("/podpora")}>
+        <Link href="/podpora">Podpora</Link>
+      </li>
       <li className="nav__list__item">
         <a href="https://www.facebook.com/sayfyhomemorial" target="_blank" rel="noreferrer" aria-label="Facebook">
           <FacebookLogo className="nav__list__icon" weight="bold" />

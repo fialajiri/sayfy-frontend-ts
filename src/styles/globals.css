@@ -1809,4 +1809,49 @@ tr:nth-child(even) {
   gap: 2rem;
 }
 
+.support-page__container {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+  margin-bottom: 10rem;
+}
+.support-page__image-item {
+  list-style: none;
+  cursor: pointer;
+  width: 15rem;
+  height: 15rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.support-page__image-item:hover {
+  transform: scale(1.1);
+  filter: none;
+}
+.support-page__logo {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+.support-page__logo:hover {
+  filter: none;
+}
+.support-page__image-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: center;
+}
+@media only screen and (min-width: 112.5em) {
+  .support-page__image-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .support-page__image-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 /*# sourceMappingURL=globals.css.map */
